@@ -34,9 +34,10 @@ const template = (page: Page) => {
   <title>${page.title}</title>
 </head>
 <body>
-  <h1>${page.title}</h1>
-  <div>${page.description}</div>
-  <div id="root"></div>
+  <div id="root">
+    <h1>${page.title}</h1>
+    <div>${page.description}</div>
+  </div>
   <script type="module" src=${page.script}></script>
 </body>
 </html>`;
