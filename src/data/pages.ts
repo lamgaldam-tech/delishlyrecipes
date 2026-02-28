@@ -1,5 +1,5 @@
 import { recipes } from "./recipes.ts";
-import type { Page } from "../types/pages.ts";
+import type { Page } from "../types/page.types.ts";
 
 const mainPages: Page[] = [
   {
@@ -29,7 +29,7 @@ const mainPages: Page[] = [
 ];
 
 const recipePages: Page[] = recipes.map((recipe) => ({
-  html: `recipes/${recipe.title.toLowerCase().replaceAll(" ", "-")}/index.html`,
+  html: `recipes/${recipe.slug}/index.html`,
   script: "../../src/entries/RecipeMain.tsx",
   title: recipe.title,
   description: recipe.description,
