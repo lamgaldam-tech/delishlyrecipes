@@ -4,8 +4,8 @@ export const recipes: Recipe[] = [
   {
     "title": "Creamy Tuscan Garlic Chicken",
     "slug": "creamy-tuscan-garlic-chicken",
-    "url": "https://delishlyrecipes.com/recipes/creamy-tuscan-garlic-chicken",
-    "image": "https://delishlyrecipes.com/images/creamy-tuscan-garlic-chicken.jpg",
+    "url": "/recipes/creamy-tuscan-garlic-chicken",
+    "image": "/images/creamy-tuscan-garlic-chicken.jpg",
     "category": {
       "name": "Dinner",
       "emoji": "🍝"
@@ -97,8 +97,8 @@ export const recipes: Recipe[] = [
   {
     "title": "Fluffy Japanese Soufflé Pancakes",
     "slug": "fluffy-japanese-souffle-pancakes",
-    "url": "https://delishlyrecipes.com/recipes/fluffy-japanese-souffle-pancakes",
-    "image": "https://delishlyrecipes.com/images/fluffy-japanese-souffle-pancakes.jpg",
+    "url": "/recipes/fluffy-japanese-souffle-pancakes",
+    "image": "/images/fluffy-japanese-souffle-pancakes.jpg",
     "category": {
       "name": "Breakfast",
       "emoji": "🥞"
@@ -166,15 +166,15 @@ export const recipes: Recipe[] = [
         "recipes": [
           {
             "title": "Garlic Butter Chicken Thighs",
-            "url": "https://delishlyrecipes.com/recipes/garlic-butter-chicken-thighs"
+            "url": "/recipes/garlic-butter-chicken-thighs"
           },
           {
             "title": "One-Pan Creamy Mushroom Chicken",
-            "url": "https://delishlyrecipes.com/recipes/one-pan-creamy-mushroom-chicken"
+            "url": "/recipes/one-pan-creamy-mushroom-chicken"
           },
           {
             "title": "Parmesan Crusted Chicken",
-            "url": "https://delishlyrecipes.com/recipes/parmesan-crusted-chicken"
+            "url": "/recipes/parmesan-crusted-chicken"
           }
         ]
       }
@@ -203,8 +203,8 @@ export const recipes: Recipe[] = [
   {
     "title": "Mediterranean Quinoa Power Bowl",
     "slug": "mediterranean-quinoa-power-bowl",
-    "url": "https://delishlyrecipes.com/recipes/mediterranean-quinoa-power-bowl",
-    "image": "https://delishlyrecipes.com/images/mediterranean-quinoa-power-bowl.jpg",
+    "url": "/recipes/mediterranean-quinoa-power-bowl",
+    "image": "/images/mediterranean-quinoa-power-bowl.jpg",
     "category": {
       "name": "Lunch",
       "emoji": "🥗"
@@ -272,15 +272,15 @@ export const recipes: Recipe[] = [
         "recipes": [
           {
             "title": "Matcha Soufflé Pancakes",
-            "url": "https://delishlyrecipes.com/recipes/matcha-souffle-pancakes"
+            "url": "/recipes/matcha-souffle-pancakes"
           },
           {
             "title": "Japanese Cheesecake Pancakes",
-            "url": "https://delishlyrecipes.com/recipes/japanese-cheesecake-pancakes"
+            "url": "/recipes/japanese-cheesecake-pancakes"
           },
           {
             "title": "Fluffy Lemon Pancakes",
-            "url": "https://delishlyrecipes.com/recipes/fluffy-lemon-pancakes"
+            "url": "/recipes/fluffy-lemon-pancakes"
           }
         ]
       }
@@ -309,8 +309,8 @@ export const recipes: Recipe[] = [
   {
     "title": "Classic Tiramisu",
     "slug": "classic-tiramisu",
-    "url": "https://delishlyrecipes.com/recipes/classic-tiramisu",
-    "image": "https://delishlyrecipes.com/images/classic-tiramisu.jpg",
+    "url": "/recipes/classic-tiramisu",
+    "image": "/images/classic-tiramisu.jpg",
     "category": {
       "name": "Desserts",
       "emoji": "🍰"
@@ -378,15 +378,15 @@ export const recipes: Recipe[] = [
         "recipes": [
           {
             "title": "Greek Quinoa Salad",
-            "url": "https://delishlyrecipes.com/recipes/greek-quinoa-salad"
+            "url": "/recipes/greek-quinoa-salad"
           },
           {
             "title": "Roasted Veggie Buddha Bowl",
-            "url": "https://delishlyrecipes.com/recipes/roasted-veggie-buddha-bowl"
+            "url": "/recipes/roasted-veggie-buddha-bowl"
           },
           {
             "title": "Mediterranean Chickpea Bowl",
-            "url": "https://delishlyrecipes.com/recipes/mediterranean-chickpea-bowl"
+            "url": "/recipes/mediterranean-chickpea-bowl"
           }
         ]
       }
@@ -415,8 +415,8 @@ export const recipes: Recipe[] = [
   {
     "title": "Spicy Thai Basil Stir-Fry",
     "slug": "spicy-thai-basil-stir-fry",
-    "url": "https://delishlyrecipes.com/recipes/spicy-thai-basil-stir-fry",
-    "image": "https://delishlyrecipes.com/images/spicy-thai-basil-stir-fry.jpg",
+    "url": "/recipes/spicy-thai-basil-stir-fry",
+    "image": "/images/spicy-thai-basil-stir-fry.jpg",
     "category": {
       "name": "Dinner",
       "emoji": "🍝"
@@ -484,15 +484,15 @@ export const recipes: Recipe[] = [
         "recipes": [
           {
             "title": "No-Bake Chocolate Tiramisu",
-            "url": "https://delishlyrecipes.com/recipes/no-bake-chocolate-tiramisu"
+            "url": "/recipes/no-bake-chocolate-tiramisu"
           },
           {
             "title": "Strawberry Tiramisu Cups",
-            "url": "https://delishlyrecipes.com/recipes/strawberry-tiramisu-cups"
+            "url": "/recipes/strawberry-tiramisu-cups"
           },
           {
             "title": "Coffee Panna Cotta",
-            "url": "https://delishlyrecipes.com/recipes/coffee-panna-cotta"
+            "url": "/recipes/coffee-panna-cotta"
           }
         ]
       }
@@ -521,8 +521,8 @@ export const recipes: Recipe[] = [
   {
     "title": "Lemon Garlic Butter Shrimp",
     "slug": "lemon-garlic-butter-shrimp",
-    "url": "https://delishlyrecipes.com/recipes/lemon-garlic-butter-shrimp/",
-    "image": "https://delishlyrecipes.com/images/lemon-garlic-butter-shrimp.jpeg",
+    "url": "/recipes/lemon-garlic-butter-shrimp/",
+    "image": "/images/lemon-garlic-butter-shrimp.jpeg",
     "category": {
       "name": "Dinner",
       "emoji": "🍝"
@@ -590,15 +590,15 @@ export const recipes: Recipe[] = [
         "recipes": [
           {
             "title": "Creamy Tuscan Garlic Chicken",
-            "url": "https://delishlyrecipes.com/recipes/creamy-tuscan-garlic-chicken"
+            "url": "/recipes/creamy-tuscan-garlic-chicken"
           },
           {
             "title": "Spicy Thai Basil Stir-Fry",
-            "url": "https://delishlyrecipes.com/recipes/spicy-thai-basil-stir-fry"
+            "url": "/recipes/spicy-thai-basil-stir-fry"
           },
           {
             "title": "Classic Tiramisu",
-            "url": "https://delishlyrecipes.com/recipes/classic-tiramisu"
+            "url": "/recipes/classic-tiramisu"
           }
         ]
       }
@@ -630,5 +630,91 @@ export const recipes: Recipe[] = [
         "url": "google.com"
       }
     ]
+  },
+  {
+    "title": "Cream Cheese Chicken Crock Pot – Easy & Ultra Creamy Slow Cooker Recipe",
+    "slug": "cream-cheese-chicken-crock-pot-easy-ultra-creamy-slow-cooker-recipe",
+    "url": "/recipes/cream-cheese-chicken-crock-pot-easy-ultra-creamy-slow-cooker-recipe/",
+    "image": "/images/cream-cheese-chicken-crock-pot-easy-ultra-creamy-slow-cooker-recipe.png",
+    "category": {
+      "name": "Dinner",
+      "emoji": "🍝"
+    },
+    "description": "Cream Cheese Chicken Crock Pot is the ultimate creamy comfort food made with simple ingredients and minimal prep time. This easy slow cooker recipe combines tender, juicy chicken with rich cream cheese and savory seasonings to create a smooth, flavorful sauce that melts in your mouth. Just toss everything into the crock pot and let it cook to perfection — no complicated steps required!",
+    "sections": {
+      "details": {
+        "prep": 10,
+        "cook": 360,
+        "servings": 6,
+        "calories": 480
+      },
+      "ingerdiants": [
+        {
+          "quantity": "4 boneless",
+          "ingrediant": "skinless chicken breasts"
+        },
+        {
+          "quantity": "8 oz (225g) cream cheese",
+          "ingrediant": "softened"
+        },
+        {
+          "quantity": "1 packet ranch seasoning mix",
+          "ingrediant": ""
+        },
+        {
+          "quantity": "1 cup chicken broth",
+          "ingrediant": ""
+        },
+        {
+          "quantity": "2 cloves garlic",
+          "ingrediant": "minced"
+        },
+        {
+          "quantity": "½ teaspoon black pepper",
+          "ingrediant": ""
+        },
+        {
+          "quantity": "½ teaspoon paprika (optional)",
+          "ingrediant": ""
+        },
+        {
+          "quantity": "Fresh parsley for garnish (optional)",
+          "ingrediant": ""
+        }
+      ],
+      "overview": {
+        "header": "About Cream Cheese Chicken Crock Pot – Easy & Ultra Creamy Slow Cooker Recipe",
+        "paragraph": "Cream Cheese Chicken Crock Pot is a rich, creamy, and comforting slow cooker dinner that requires minimal effort but delivers maximum flavor. The chicken becomes incredibly tender as it slowly cooks in a velvety cream cheese sauce infused with ranch seasoning and garlic.\n\nThis is a perfect dump-and-go recipe for busy weeknights, meal prep, or cozy family dinners. Serve it over rice, pasta, mashed potatoes, or even cauliflower rice for a low-carb option."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1:\n\nPlace the chicken breasts at the bottom of your crock pot.\n\nStep 2:\n\nAdd minced garlic, black pepper, paprika, and ranch seasoning over the chicken.\n\nStep 3:\n\nPour chicken broth around the chicken.\n\nStep 4:\n\nPlace the cream cheese on top (do not mix yet).\n\nStep 5:\n\nCover and cook:\n\nLOW: 6 hours\n\nHIGH: 4 hours\n\nStep 6:\n\nOnce cooked, shred the chicken using two forks and stir everything together until the sauce becomes smooth and creamy.\n\nStep 7:\n\nGarnish with parsley and serve warm."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Use block cream cheese, not spreadable tub cream cheese.\n\n✔ For extra flavor, add ½ cup shredded cheddar at the end.\n\n✔ Want it thicker? Let it cook uncovered for 15 minutes after shredding.\n\n✔ Add mushrooms or spinach for extra nutrition.\n\n✔ For spicy version, add red pepper flakes or diced jalapeños."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Can I use frozen chicken?\nYes, but increase cooking time by 1 hour and ensure it reaches 165°F (75°C).\n\n2. Can I make this low carb?\nYes! Serve it with cauliflower rice or zucchini noodles.\n\n3. How do I store leftovers?\nStore in an airtight container in the fridge for up to 4 days.\n\n4. Can I freeze it?\nYes, freeze for up to 2 months. Reheat gently to maintain creamy texture.\n\n5. What can I serve it with?\nRice, pasta, mashed potatoes, roasted vegetables, or dinner rolls."
+      },
+      "more": {
+        "header": "More Like Cream Cheese Chicken Crock Pot – Easy & Ultra Creamy Slow Cooker Recipe",
+        "recipes": []
+      }
+    },
+    "tags": [
+      "cream cheese chicken",
+      "crock pot chicken",
+      "slow cooker dinner",
+      "creamy chicken recipe",
+      "easy weeknight meal",
+      "comfort food",
+      "dump and go recipe",
+      "family dinner",
+      "high protein recipe",
+      "American dinner"
+    ],
+    "links": []
   }
 ];
