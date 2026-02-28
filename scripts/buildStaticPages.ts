@@ -36,14 +36,10 @@ function template(page: Page) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>${page.title}</title>
+  ${page.header}
 </head>
 <body>
-  <div id="root">
-    <h1>${page.title}</h1>
-    <div>${page.description}</div>
-  </div>
+  ${page.body}
   <script type="module" src="${page.script}"></script>
 </body>
 </html>`;
