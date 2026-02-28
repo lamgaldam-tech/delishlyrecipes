@@ -4,31 +4,20 @@ import { recipes } from "@/data/recipes";
 import { Button } from "@/components/ui/button";
 import { RecipeCard } from "@/components/RecipeCard";
 import heroImage from "@/assets/hero-food.jpg";
-import { recipeTypes } from "@/types/recipes";
-import type { RecipeType } from "@/types/recipes";
-
-const categoriesEmojiesMap: Record<RecipeType, string> = {
-  Breakfast: "🥞",
-  Lunch: "🥗",
-  Dinner: "🍝",
-  Desserts: "🍰",
-  Snacks: "🥨",
-  Drinks: "🥤",
-  Vegan: "🌱",
-  "30-Min Meals": "⏱️",
-};
+import { recipeCategories } from "@/types/recipe.types";
 
 export const Home = () => {
-  console.log(recipes);
   const [email, setEmail] = useState("");
-  const counts: Record<RecipeType, number> = {} as Record<RecipeType, number>;
+  const counts: Record<string, number> = {};
+
   recipes.forEach((r) => {
-    counts[r.type] = (counts[r.type] || 0) + 1;
+    const categoryName = r.category.name; // use the name as key
+    counts[categoryName] = (counts[categoryName] || 0) + 1;
   });
-  const categories = recipeTypes.map((r) => ({
-    name: r,
-    count: counts[r], // todo
-    emoji: categoriesEmojiesMap[r],
+
+  const categories = recipeCategories.map((r) => ({
+    ...r,
+    count: counts[r.name] || 0, // match by name
   }));
 
   return (
@@ -41,7 +30,7 @@ export const Home = () => {
             alt="Fresh ingredients"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-foreground/80 via-foreground/50 to-transparent" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-xl animate-fade-in">
@@ -98,7 +87,11 @@ export const Home = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[recipes[0], recipes[1], recipes[2]].map((r) => (
-            <RecipeCard key={r.title} recipe={r} />
+            <RecipeCard
+              key={r.title}
+              recipe={r}
+              onClick={() => (window.location.href = r.url)}
+            />
           ))}
         </div>
       </section>
@@ -148,7 +141,11 @@ export const Home = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[recipes[0], recipes[1], recipes[2]].map((r) => (
-            <RecipeCard key={r.title} recipe={r} />
+            <RecipeCard
+              key={r.title}
+              recipe={r}
+              onClick={() => (window.location.href = r.url)}
+            />
           ))}
         </div>
       </section>

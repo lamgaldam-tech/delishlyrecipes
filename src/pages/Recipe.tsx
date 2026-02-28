@@ -8,37 +8,83 @@ import {
   Minus,
   Plus,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import type { Recipe } from "../types/recipes";
+import type { Recipe } from "@/types/recipe.types";
 
 interface RecipeProps {
   recipe: Recipe;
+  onBack: () => void;
+  // onCardClick: (recipe: Recipe) => void;
 }
 
-export const RecipeDetail = ({ recipe }: RecipeProps) => {
+export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
   const [servingMultiplier, setServingMultiplier] = useState(1);
-  const adjustedServings = recipe.servings * servingMultiplier;
+
+  const details = recipe.sections.details;
+  const adjustedServings = details.servings * servingMultiplier;
+
+  const Paragraph = (paragraph: string): React.ReactNode => {
+    if (!recipe.links || recipe.links.length === 0) return paragraph;
+
+    // Escape all keywords for regex
+    const escapedKeywords = recipe.links.map((link) =>
+      link.keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+    );
+
+    const regex = new RegExp(`\\b(${escapedKeywords.join("|")})\\b`, "gi");
+
+    const parts = paragraph.split(regex);
+
+    return parts.map((part, index) => {
+      // Find matching link object
+      const match = recipe.links.find(
+        (link) => link.keyword.toLowerCase() === part.toLowerCase(),
+      );
+
+      if (match) {
+        return (
+          <a
+            key={index}
+            href={match.url}
+            className="text-primary font-medium underline underline-offset-4 decoration-2 
+                     hover:text-primary/70 hover:decoration-primary/60 
+                     transition-all duration-200"
+          >
+            {part}
+          </a>
+        );
+      }
+
+      return part;
+    });
+  };
 
   return (
     <>
+      {/* Hero */}
       <div className="relative h-[50vh] md:h-[60vh]">
         <img
-          src={recipe.thumbnail}
+          src={recipe.image}
           alt={recipe.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-foreground/60 to-transparent" />
+
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="container mx-auto">
+            {/* Back Button */}
             <button
-              onClick={() => (window.location.href = "/recipes/")}
+              onClick={onBack}
               className="inline-flex items-center gap-1.5 text-sm text-background/80 hover:text-background mb-4 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" /> All Recipes
             </button>
-            <span className="block text-xs font-medium text-primary bg-primary/20 px-3 py-1 rounded-full w-fit mb-3">
-              {recipe.type}
+
+            {/* Category */}
+            <span className="inline-flex items-center gap-2 mx-4 text-xs font-medium text-primary bg-primary/20 px-3 py-1 rounded-full mb-3">
+              <span>{recipe.category.emoji}</span>
+              <span>{recipe.category.name}</span>
             </span>
+
             <h1 className="font-display text-3xl md:text-5xl font-bold text-background max-w-2xl">
               {recipe.title}
             </h1>
@@ -51,15 +97,22 @@ export const RecipeDetail = ({ recipe }: RecipeProps) => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {/* Main */}
           <div className="lg:col-span-2 space-y-10">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {recipe.description}
+            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+              {Paragraph(recipe.description)}
             </p>
-
             {/* Quick Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { icon: Clock, label: "Prep", value: `${recipe.prep} min` },
-                { icon: Clock, label: "Cook", value: `${recipe.cook} min` },
+                {
+                  icon: Clock,
+                  label: "Prep",
+                  value: `${details.prep} min`,
+                },
+                {
+                  icon: Clock,
+                  label: "Cook",
+                  value: `${details.cook} min`,
+                },
                 {
                   icon: Users,
                   label: "Servings",
@@ -69,7 +122,7 @@ export const RecipeDetail = ({ recipe }: RecipeProps) => {
                   icon: Flame,
                   label: "Calories",
                   value: String(
-                    Math.round(recipe.calories * servingMultiplier),
+                    Math.round(details.calories * servingMultiplier),
                   ),
                 },
               ].map((s) => (
@@ -84,34 +137,74 @@ export const RecipeDetail = ({ recipe }: RecipeProps) => {
               ))}
             </div>
 
+            {/* Overview */}
+            <div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                {recipe.sections.overview.header}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+                {Paragraph(recipe.sections.overview.paragraph)}
+              </p>
+            </div>
             {/* Instructions */}
             <div>
               <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                Instructions
+                {recipe.sections.instructions.header}
               </h2>
-              <ol className="space-y-6">
-                {recipe.instructions.map((step, i) => (
-                  <li key={i} className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
-                      {i + 1}
-                    </span>
-                    <p className="text-foreground/80 leading-relaxed pt-1">
-                      {step}
-                    </p>
-                  </li>
-                ))}
-              </ol>
+              <p className="text-foreground/80 leading-relaxed whitespace-pre-line">
+                {Paragraph(recipe.sections.instructions.paragraph)}
+              </p>
+            </div>
+
+            {/* Tips */}
+            <div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                {recipe.sections.tips.header}
+              </h2>
+              <p className="text-foreground/80 leading-relaxed whitespace-pre-line">
+                {Paragraph(recipe.sections.tips.paragraph)}
+              </p>
+            </div>
+
+            {/* FAQ */}
+            <div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                {recipe.sections.faq.header}
+              </h2>
+              <p className="text-foreground/80 leading-relaxed whitespace-pre-line">
+                {Paragraph(recipe.sections.faq.paragraph)}
+              </p>
+            </div>
+
+            {/* More Like */}
+            <div className="flex flex-col gap-3">
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                {recipe.sections.more.header}
+              </h2>
+              {recipe.sections.more.recipes.map((r) => (
+                <a
+                  key={r.url}
+                  href={r.url}
+                  className="group inline-block text-primary font-medium 
+                 underline underline-offset-4 decoration-2
+                 hover:text-primary/70 hover:decoration-primary/60
+                 transition-all duration-200"
+                >
+                  {r.title}
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Sidebar */}
           <div className="space-y-8">
             {/* Ingredients */}
-            <div className="bg-card rounded-xl shadow-card p-6 sticky top-20">
+            <div className="bg-card rounded-xl shadow-card p-6 top-20">
               <div className="flex items-center justify-between mb-5">
                 <h2 className="font-display text-xl font-bold text-foreground">
                   Ingredients
                 </h2>
+
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() =>
@@ -119,43 +212,47 @@ export const RecipeDetail = ({ recipe }: RecipeProps) => {
                         Math.max(0.5, servingMultiplier - 0.5),
                       )
                     }
-                    className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                    className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     <Minus className="w-3 h-3" />
                   </button>
-                  <span className="text-sm font-medium text-foreground w-6 text-center">
+
+                  <span className="text-sm font-medium w-6 text-center">
                     {servingMultiplier}x
                   </span>
+
                   <button
                     onClick={() =>
                       setServingMultiplier(servingMultiplier + 0.5)
                     }
-                    className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                    className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     <Plus className="w-3 h-3" />
                   </button>
                 </div>
               </div>
+
               <ul className="space-y-3">
-                {recipe.ingredients.map((ing, i) => (
+                {recipe.sections.ingerdiants.map((ing, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                     <span className="text-foreground/80">
                       <strong className="text-foreground">
                         {ing.quantity}
                       </strong>{" "}
-                      {ing.item}
+                      {ing.ingrediant}
                     </span>
                   </li>
                 ))}
               </ul>
-              <Button
-                variant="outline"
-                className="w-full mt-6 rounded-full"
+
+              <button
+                className="w-full mt-6 flex items-center justify-center gap-2 bg-primary text-white py-2 rounded-lg"
                 onClick={() => window.print()}
               >
-                <Printer className="w-4 h-4 mr-2" /> Print Recipe
-              </Button>
+                <Printer className="w-4 h-4" />
+                Print Recipe
+              </button>
             </div>
 
             {/* Tags */}

@@ -8,7 +8,10 @@ import "@/global.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Layout>
-      <Recipes recipes={recipes} />
+      <Recipes
+        recipes={recipes}
+        onCardClick={(r) => (window.location.href = r.url)}
+      />
     </Layout>
   </React.StrictMode>,
 );

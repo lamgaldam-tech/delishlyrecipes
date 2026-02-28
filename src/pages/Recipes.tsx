@@ -1,33 +1,26 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { RecipeCard } from "@/components/RecipeCard";
-import { recipeTypes } from "@/types/recipes";
-import type { Recipe, RecipeType } from "@/types/recipes";
+import { recipeCategories } from "@/types/recipe.types";
+import type { Recipe } from "@/types/recipe.types";
 
 interface RecipeProps {
   recipes: Recipe[];
+  onCardClick: (recipe: Recipe) => void;
 }
 
-const categoriesEmojiesMap: Record<RecipeType, string> = {
-  Breakfast: "🥞",
-  Lunch: "🥗",
-  Dinner: "🍝",
-  Desserts: "🍰",
-  Snacks: "🥨",
-  Drinks: "🥤",
-  Vegan: "🌱",
-  "30-Min Meals": "⏱️",
-};
-
-export const Recipes = ({ recipes }: RecipeProps) => {
+export const Recipes = ({ recipes, onCardClick }: RecipeProps) => {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState<string>("All");
 
   const filtered = recipes.filter((r) => {
     const matchSearch =
       r.title.toLowerCase().includes(search.toLowerCase()) ||
       r.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()));
-    const matchCategory = activeCategory === "All" || r.type === activeCategory;
+
+    const matchCategory =
+      activeCategory === "All" || r.category.name === activeCategory;
+
     return matchSearch && matchCategory;
   });
 
@@ -39,16 +32,19 @@ export const Recipes = ({ recipes }: RecipeProps) => {
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             All Recipes
           </h1>
+
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
             Browse our collection of tested and trusted recipes.
           </p>
+
           <div className="relative max-w-md mx-auto">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search recipes, ingredients..."
+              placeholder="Search recipes, tags..."
               className="w-full pl-11 pr-5 py-3 rounded-full bg-card border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
@@ -68,17 +64,18 @@ export const Recipes = ({ recipes }: RecipeProps) => {
           >
             All
           </button>
-          {recipeTypes.slice(0, 6).map((c) => (
+
+          {recipeCategories.map((c) => (
             <button
-              key={c}
-              onClick={() => setActiveCategory(c)}
+              key={c.name}
+              onClick={() => setActiveCategory(c.name)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeCategory === c
+                activeCategory === c.name
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-muted-foreground hover:text-foreground"
               }`}
             >
-              {categoriesEmojiesMap[c]} {c}
+              {c.emoji} {c.name}
             </button>
           ))}
         </div>
@@ -89,7 +86,7 @@ export const Recipes = ({ recipes }: RecipeProps) => {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((r) => (
-              <RecipeCard key={r.title} recipe={r} />
+              <RecipeCard key={r.slug} recipe={r} onClick={onCardClick} />
             ))}
           </div>
         ) : (
