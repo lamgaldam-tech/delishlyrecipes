@@ -1,6 +1,6 @@
 export interface Page {
   html: string;
   script: string;
-  title: string;
-  description: string;
+  header: string;
+  body: string;
 }
