@@ -6,7 +6,7 @@ export const Navbar = () => {
 
   const links = [
     { to: "/", label: "Home" },
-    { to: "/recipes/", label: "Recipes" },
+    { to: "/recipes/", label: "All Recipes" },
     { to: "/about/", label: "About" },
     { to: "/contact/", label: "Contact" },
   ];
@@ -14,36 +14,43 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <button
-          onClick={() => (window.location.href = "/")}
-          className="flex items-center gap-2"
-        >
-          <span className="text-2xl">🍽️</span>
+        <a href="/" className="flex items-center gap-2">
+          <img
+            src="/icon.jpg"
+            alt="Delishly Recipes"
+            title="Delishly Recipes"
+            width="48"
+            height="48"
+            className="text-2xl rounded-full"
+          />
           <span className="font-display text-xl font-bold text-foreground tracking-tight">
             Delishly Recipes
           </span>
-        </button>
+        </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav
+          className="hidden md:flex items-center gap-8"
+          aria-label="Main Navigation"
+        >
           {links.map((l) => (
-            <button
+            <a
               key={l.to}
-              onClick={() => (window.location.href = l.to)}
+              href={l.to}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {l.label}
-            </button>
+            </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => (window.location.href = "/recipes/")}
+          <a
+            href="/recipes/"
             className="hidden sm:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <Search className="w-4 h-4" />
-            Search
-          </button>
+            Search Recipes
+          </a>
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setOpen(!open)}
@@ -57,13 +64,13 @@ export const Navbar = () => {
       {open && (
         <nav className="md:hidden border-t bg-card px-4 pb-4 pt-2 space-y-2">
           {links.map((l) => (
-            <button
+            <a
               key={l.to}
-              onClick={() => (window.location.href = l.to)}
+              href={l.to}
               className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary"
             >
               {l.label}
-            </button>
+            </a>
           ))}
         </nav>
       )}
