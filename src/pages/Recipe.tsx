@@ -269,7 +269,7 @@ export const RecipePage = ({ recipe }: RecipeProps) => {
                           ? `${Number(ing.quantity.split(" ")[0]) * servingMultiplier} ${ing.quantity.split(" ").slice(1).join(" ")}`
                           : ing.quantity}
                       </strong>{" "}
-                      {ing.ingrediant}
+                      {ing.ingredient}
                     </span>
                   </li>
                 ))}
