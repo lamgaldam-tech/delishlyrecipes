@@ -21,35 +21,35 @@ export const recipes: Recipe[] = [
       "ingerdiants": [
         {
           "quantity": "4 pieces",
-          "ingrediant": "Chicken breasts"
+          "ingredient": "Chicken breasts"
         },
         {
           "quantity": "1/2 cup",
-          "ingrediant": "Sun-dried tomatoes"
+          "ingredient": "Sun-dried tomatoes"
         },
         {
           "quantity": "2 cups",
-          "ingrediant": "Fresh spinach"
+          "ingredient": "Fresh spinach"
         },
         {
           "quantity": "1 cup",
-          "ingrediant": "Heavy cream"
+          "ingredient": "Heavy cream"
         },
         {
           "quantity": "1/2 cup",
-          "ingrediant": "Parmesan cheese"
+          "ingredient": "Parmesan cheese"
         },
         {
           "quantity": "4 minced",
-          "ingrediant": "Garlic cloves"
+          "ingredient": "Garlic cloves"
         },
         {
           "quantity": "2 tbsp",
-          "ingrediant": "Olive oil"
+          "ingredient": "Olive oil"
         },
         {
           "quantity": "1 tsp",
-          "ingrediant": "Italian seasoning"
+          "ingredient": "Italian seasoning"
         }
       ],
       "overview": {
@@ -114,35 +114,35 @@ export const recipes: Recipe[] = [
       "ingerdiants": [
         {
           "quantity": "2",
-          "ingrediant": "Egg yolks"
+          "ingredient": "Egg yolks"
         },
         {
           "quantity": "3",
-          "ingrediant": "Egg whites"
+          "ingredient": "Egg whites"
         },
         {
           "quantity": "1/4 cup",
-          "ingrediant": "Cake flour"
+          "ingredient": "Cake flour"
         },
         {
           "quantity": "2 tbsp",
-          "ingrediant": "Sugar"
+          "ingredient": "Sugar"
         },
         {
           "quantity": "2 tbsp",
-          "ingrediant": "Milk"
+          "ingredient": "Milk"
         },
         {
           "quantity": "1 tsp",
-          "ingrediant": "Vanilla extract"
+          "ingredient": "Vanilla extract"
         },
         {
           "quantity": "1/2 tsp",
-          "ingrediant": "Baking powder"
+          "ingredient": "Baking powder"
         },
         {
           "quantity": "1/4 tsp",
-          "ingrediant": "Cream of tartar"
+          "ingredient": "Cream of tartar"
         }
       ],
       "overview": {
@@ -220,35 +220,35 @@ export const recipes: Recipe[] = [
       "ingerdiants": [
         {
           "quantity": "1 cup",
-          "ingrediant": "Quinoa"
+          "ingredient": "Quinoa"
         },
         {
           "quantity": "1 cup",
-          "ingrediant": "Cherry tomatoes"
+          "ingredient": "Cherry tomatoes"
         },
         {
           "quantity": "1 diced",
-          "ingrediant": "Cucumber"
+          "ingredient": "Cucumber"
         },
         {
           "quantity": "1/3 cup",
-          "ingrediant": "Kalamata olives"
+          "ingredient": "Kalamata olives"
         },
         {
           "quantity": "1/2 cup",
-          "ingrediant": "Feta cheese"
+          "ingredient": "Feta cheese"
         },
         {
           "quantity": "1 can",
-          "ingrediant": "Chickpeas"
+          "ingredient": "Chickpeas"
         },
         {
           "quantity": "3 tbsp",
-          "ingrediant": "Tahini"
+          "ingredient": "Tahini"
         },
         {
           "quantity": "2 tbsp",
-          "ingrediant": "Lemon juice"
+          "ingredient": "Lemon juice"
         }
       ],
       "overview": {
@@ -326,35 +326,35 @@ export const recipes: Recipe[] = [
       "ingerdiants": [
         {
           "quantity": "500g",
-          "ingrediant": "Mascarpone cheese"
+          "ingredient": "Mascarpone cheese"
         },
         {
           "quantity": "24 pieces",
-          "ingrediant": "Ladyfinger biscuits"
+          "ingredient": "Ladyfinger biscuits"
         },
         {
           "quantity": "1.5 cups",
-          "ingrediant": "Espresso"
+          "ingredient": "Espresso"
         },
         {
           "quantity": "4",
-          "ingrediant": "Egg yolks"
+          "ingredient": "Egg yolks"
         },
         {
           "quantity": "1/2 cup",
-          "ingrediant": "Sugar"
+          "ingredient": "Sugar"
         },
         {
           "quantity": "1 cup",
-          "ingrediant": "Heavy cream"
+          "ingredient": "Heavy cream"
         },
         {
           "quantity": "for dusting",
-          "ingrediant": "Cocoa powder"
+          "ingredient": "Cocoa powder"
         },
         {
           "quantity": "2 tbsp",
-          "ingrediant": "Kahlúa (optional)"
+          "ingredient": "Kahlúa (optional)"
         }
       ],
       "overview": {
@@ -432,35 +432,35 @@ export const recipes: Recipe[] = [
       "ingerdiants": [
         {
           "quantity": "400g",
-          "ingrediant": "Ground pork"
+          "ingredient": "Ground pork"
         },
         {
           "quantity": "2 cups",
-          "ingrediant": "Thai basil leaves"
+          "ingredient": "Thai basil leaves"
         },
         {
           "quantity": "3-5 sliced",
-          "ingrediant": "Thai chilies"
+          "ingredient": "Thai chilies"
         },
         {
           "quantity": "5 minced",
-          "ingrediant": "Garlic cloves"
+          "ingredient": "Garlic cloves"
         },
         {
           "quantity": "2 tbsp",
-          "ingrediant": "Soy sauce"
+          "ingredient": "Soy sauce"
         },
         {
           "quantity": "1 tbsp",
-          "ingrediant": "Oyster sauce"
+          "ingredient": "Oyster sauce"
         },
         {
           "quantity": "1 tbsp",
-          "ingrediant": "Fish sauce"
+          "ingredient": "Fish sauce"
         },
         {
           "quantity": "for serving",
-          "ingrediant": "Jasmine rice"
+          "ingredient": "Jasmine rice"
         }
       ],
       "overview": {
@@ -538,35 +538,35 @@ export const recipes: Recipe[] = [
       "ingerdiants": [
         {
           "quantity": "500g",
-          "ingrediant": "Shrimp"
+          "ingredient": "Shrimp"
         },
         {
           "quantity": "3 tbsp",
-          "ingrediant": "Butter"
+          "ingredient": "Butter"
         },
         {
           "quantity": "4 cloves",
-          "ingrediant": "Garlic"
+          "ingredient": "Garlic"
         },
         {
           "quantity": "1 tbsp",
-          "ingrediant": "Olive oil"
+          "ingredient": "Olive oil"
         },
         {
           "quantity": "1",
-          "ingrediant": "Lemon"
+          "ingredient": "Lemon"
         },
         {
           "quantity": "1 tsp",
-          "ingrediant": "Paprika"
+          "ingredient": "Paprika"
         },
         {
           "quantity": "to taste",
-          "ingrediant": "Salt and pepper"
+          "ingredient": "Salt and pepper"
         },
         {
           "quantity": "2 tbsp",
-          "ingrediant": "Fresh parsley"
+          "ingredient": "Fresh parsley"
         }
       ],
       "overview": {
@@ -651,35 +651,35 @@ export const recipes: Recipe[] = [
       "ingerdiants": [
         {
           "quantity": "4 boneless",
-          "ingrediant": "skinless chicken breasts"
+          "ingredient": "skinless chicken breasts"
         },
         {
           "quantity": "8 oz (225g) cream cheese",
-          "ingrediant": "softened"
+          "ingredient": "softened"
         },
         {
           "quantity": "1 packet ranch seasoning mix",
-          "ingrediant": ""
+          "ingredient": ""
         },
         {
           "quantity": "1 cup chicken broth",
-          "ingrediant": ""
+          "ingredient": ""
         },
         {
           "quantity": "2 cloves garlic",
-          "ingrediant": "minced"
+          "ingredient": "minced"
         },
         {
           "quantity": "½ teaspoon black pepper",
-          "ingrediant": ""
+          "ingredient": ""
         },
         {
           "quantity": "½ teaspoon paprika (optional)",
-          "ingrediant": ""
+          "ingredient": ""
         },
         {
           "quantity": "Fresh parsley for garnish (optional)",
-          "ingrediant": ""
+          "ingredient": ""
         }
       ],
       "overview": {
