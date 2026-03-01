@@ -1,14 +1,100 @@
 import { recipes } from "./recipes.ts";
+import type { Recipe } from "../types/recipe.types.ts";
 import type { Page } from "../types/page.types.ts";
 
+const BASE_URL = "https://delishlyrecipes.com";
 // header
-const header = (title: string, description: string) => {
+const header = (
+  title: string,
+  description: string,
+  url: string,
+  pageType: "normal" | "list" | "recipe" = "normal",
+  itemList?: Recipe[],
+  image: string = `${BASE_URL}/icon.jpg`,
+  recipe?: Recipe,
+) => {
+  const ogType = pageType === "recipe" ? "article" : "website";
+
+  let jsonLD: any = {};
+
+  if (pageType === "recipe" && recipe) {
+    jsonLD = {
+      "@context": "https://schema.org",
+      "@type": "Recipe",
+      name: recipe.title,
+      description: recipe.description,
+      image: `${BASE_URL}${recipe.image}`,
+      author: { "@type": "Organization", name: "Delishly Recipes" },
+      publisher: {
+        "@type": "Organization",
+        name: "Delishly Recipes",
+        logo: { "@type": "ImageObject", url: `${BASE_URL}/icon.jpg` },
+      },
+      recipeIngredient: recipe.sections.ingerdiants.map(
+        (i) => `${i.quantity} ${i.ingredient}`,
+      ),
+      recipeInstructions: recipe.sections.instructions.paragraph
+        .split("\n")
+        .map((step) => step.trim())
+        .filter((s) => s)
+        .map((step) => ({ "@type": "HowToStep", text: step })),
+      prepTime: `PT${recipe.sections.details.prep}M`,
+      cookTime: `PT${recipe.sections.details.cook}M`,
+      totalTime: `PT${
+        recipe.sections.details.prep + recipe.sections.details.cook
+      }M`,
+      recipeYield: `${recipe.sections.details.servings} servings`,
+      keywords: recipe.tags || [],
+    };
+  } else if (pageType === "list" && itemList) {
+    jsonLD = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: title,
+      description,
+      url: `${BASE_URL}${url}`,
+      itemListElement: itemList.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `${BASE_URL}${item.url}`,
+      })),
+    };
+  } else {
+    // normal page (home, legal, about)
+    jsonLD = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: title,
+      description,
+      url: `${BASE_URL}${url}`,
+      author: { "@type": "Organization", name: "Delishly Recipes" },
+      publisher: {
+        "@type": "Organization",
+        name: "Delishly Recipes",
+        logo: { "@type": "ImageObject", url: `${BASE_URL}/icon.jpg` },
+      },
+    };
+  }
+
   return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${description}">
     <title>${title}</title>
     <link rel="icon" href="/icon.jpg" type="image/x-icon">
+    <link rel="canonical" href="${BASE_URL}${url}" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="${description}" />
+    <meta property="og:type" content="${ogType}" />
+    <meta property="og:url" content="${BASE_URL}${url}" />
+    <meta property="og:image" content="${image}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${title}" />
+    <meta name="twitter:description" content="${description}" />
+    <meta name="twitter:image" content="${image}" />
+    <script type="application/ld+json">
+    ${JSON.stringify(jsonLD, null, 2)}
+    </script>
   `;
 };
 // body
@@ -33,6 +119,7 @@ const mainPages: Page[] = [
     header: header(
       "Delishly Recipes – Easy & Delicious Recipes for Every Meal",
       "Discover tested and easy-to-follow recipes for breakfast, lunch, dinner, desserts, and more. Cook smarter and eat better with Delishly Recipes.",
+      "/",
     ),
     body: body(
       `<link rel="preload" as="image" href="/src/assets/hero-food.jpg"/><main><section><div><img src="/src/assets/hero-food.jpg" alt="Fresh ingredients"/><div></div></div><div><div><h1>Cook Smarter.<br/>Eat Better.<br/><span>Live Delishly.</span></h1><p>Discover easy, delicious, and tested recipes for every occasion.</p><div><a href="/recipes/"><span>Browse Recipes</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="/">30-Minute Meals</a></div></div></div></section><section aria-labelledby="featured-recipes"><div><div><span>Handpicked</span><h2 id="featured-recipes">Featured Recipes</h2></div><a href="/recipes/">View all →</a></div><div><article><a href="/recipes/classic-tiramisu/"><div><img src="/images/classic-tiramisu.jpg" alt="Classic Tiramisu" loading="lazy"/></div><div><span><span>🍰</span><span>Desserts</span></span><h3>Classic Tiramisu</h3><p>Layers of espresso-soaked ladyfingers and mascarpone cream dusted with rich cocoa powder.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>30<!-- --> min</span></div></div></a></article><article><a href="/recipes/spicy-thai-basil-stir-fry/"><div><img src="/images/spicy-thai-basil-stir-fry.jpg" alt="Spicy Thai Basil Stir-Fry" loading="lazy"/></div><div><span><span>🍝</span><span>Dinner</span></span><h3>Spicy Thai Basil Stir-Fry</h3><p>A fiery and aromatic stir-fry with ground pork, Thai basil, and chilies served over jasmine rice.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>20<!-- --> min</span></div></div></a></article><article><a href="/recipes/lemon-garlic-butter-shrimp"><div><img src="/images/lemon-garlic-butter-shrimp.jpeg" alt="Lemon Garlic Butter Shrimp" loading="lazy"/></div><div><span><span>🍝</span><span>Dinner</span></span><h3>Lemon Garlic Butter Shrimp</h3><p>Juicy shrimp cooked in a zesty lemon garlic butter sauce, served over rice or pasta.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>25<!-- --> min</span></div></div></a></article></div></section><section aria-labelledby="categories"><div><div><span>Browse by</span><h2 id="categories">Categories</h2></div><div><a href="/recipes/"><span>🥞</span><h3>Breakfast</h3><p>1<!-- --> recipes</p></a><a href="/recipes/"><span>🥗</span><h3>Lunch</h3><p>1<!-- --> recipes</p></a><a href="/recipes/"><span>🍝</span><h3>Dinner</h3><p>3<!-- --> recipes</p></a><a href="/recipes/"><span>🍰</span><h3>Desserts</h3><p>1<!-- --> recipes</p></a><a href="/recipes/"><span>🥨</span><h3>Snacks</h3><p>0<!-- --> recipes</p></a><a href="/recipes/"><span>🥤</span><h3>Drinks</h3><p>0<!-- --> recipes</p></a><a href="/recipes/"><span>🌱</span><h3>Vegan</h3><p>0<!-- --> recipes</p></a><a href="/recipes/"><span>⏱️</span><h3>30-Min Meals</h3><p>0<!-- --> recipes</p></a></div></div></section><section aria-labelledby="trending-now"><div><div><span>What&#x27;s Hot</span><h2 id="trending-now">Trending Now</h2></div></div><div><article><a href="/recipes/creamy-tuscan-garlic-chicken/"><div><img src="/images/creamy-tuscan-garlic-chicken.jpg" alt="Creamy Tuscan Garlic Chicken" loading="lazy"/></div><div><span><span>🍝</span><span>Dinner</span></span><h3>Creamy Tuscan Garlic Chicken</h3><p>Sun-dried tomatoes, garlic, and spinach in a creamy parmesan sauce over tender chicken breasts.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>35<!-- --> min</span></div></div></a></article><article><a href="/recipes/fluffy-japanese-souffle-pancakes/"><div><img src="/images/fluffy-japanese-souffle-pancakes.jpg" alt="Fluffy Japanese Soufflé Pancakes" loading="lazy"/></div><div><span><span>🥞</span><span>Breakfast</span></span><h3>Fluffy Japanese Soufflé Pancakes</h3><p>Impossibly fluffy and jiggly pancakes that melt in your mouth, topped with fresh berries and maple syrup.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>30<!-- --> min</span></div></div></a></article><article><a href="/recipes/mediterranean-quinoa-power-bowl/"><div><img src="/images/mediterranean-quinoa-power-bowl.jpg" alt="Mediterranean Quinoa Power Bowl" loading="lazy"/></div><div><span><span>🥗</span><span>Lunch</span></span><h3>Mediterranean Quinoa Power Bowl</h3><p>A vibrant and nutritious bowl packed with quinoa, roasted veggies, feta, and a lemon-tahini dressing.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>35<!-- --> min</span></div></div></a></article></div></section><section aria-labelledby="get-weekly-recipes"><div><span>📬</span><h2 id="get-weekly-recipes">Get Weekly Recipes</h2><p>Join 10,000+ food lovers. New recipes delivered to your inbox every week.</p><form><input type="email" placeholder="your@email.com" required="" value=""/><button data-slot="button" data-variant="default" data-size="default" type="submit" aria-label="Subscribe to weekly recipes">Subscribe</button></form></div></section></main>`,
@@ -44,6 +131,7 @@ const mainPages: Page[] = [
     header: header(
       "About Delishly Recipes – Our Story & Mission",
       "Learn about Delishly Recipes, our passion for cooking, and our mission to provide reliable, delicious, and easy recipes for home cooks everywhere.",
+      "/about/",
     ),
     body: body(
       `<main><section><div><h1>About Delishly Recipes</h1><p>We believe great food brings people together.</p></div></section><section><div><p>Delishly Recipes was born from a simple idea: everyone deserves access to tested, reliable, and beautiful recipes that actually work. We&#x27;re a community of passionate home cooks and professional chefs sharing recipes we love.</p><p>Every recipe on our platform is carefully tested and photographed. We focus on clear instructions, honest prep times, and accessible ingredients you can find at your local grocery store.</p><div><div><p>500+</p><p>Recipes</p></div><div><p>50K+</p><p>Monthly Readers</p></div><div><p>4.8</p><p>Avg Rating</p></div></div><p>Whether you&#x27;re looking for a quick weeknight dinner, an impressive dessert for a party, or healthy meal prep ideas, we&#x27;ve got you covered. Welcome to Delishly Recipes — your kitchen&#x27;s new best friend.</p></div></section></main>`,
@@ -55,6 +143,7 @@ const mainPages: Page[] = [
     header: header(
       "About Delishly Recipes – Our Story & Mission",
       "Learn about Delishly Recipes, our passion for cooking, and our mission to provide reliable, delicious, and easy recipes for home cooks everywhere.",
+      "/contact/",
     ),
     body: body(
       `<main><section><div><h1>Get in Touch</h1><p>Have a question, suggestion, or just want to say hello? We&#x27;d love to hear from you.</p></div></section><section><div><div><div><div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg></div><div><h3>Email Us</h3><p>hello@delishly.com</p></div></div><div><div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></div><div><h3>Location</h3><p>San Francisco, CA</p></div></div></div><form><input type="text" placeholder="Your name" required=""/><input type="email" placeholder="Your email" required=""/><textarea placeholder="Your message" rows="5" required=""></textarea><button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg> Send Message</button></form></div></section></main>`,
@@ -66,6 +155,9 @@ const mainPages: Page[] = [
     header: header(
       "All Recipes – Browse Delicious & Tested Recipes | Delishly Recipes",
       "Explore our collection of breakfast, lunch, dinner, dessert, and quick meal recipes. Find step-by-step instructions and tips to cook delicious meals at home.",
+      "/recipes/",
+      "list",
+      recipes,
     ),
     body: body(
       `<main><section><div><h1>All Recipes</h1><p>Browse our collection of tested and trusted recipes.</p><div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg><input type="search" placeholder="Search recipes, tags..." value=""/></div></div></section><section><div><button>All</button><button>🥞<!-- --> <!-- -->Breakfast</button><button>🥗<!-- --> <!-- -->Lunch</button><button>🍝<!-- --> <!-- -->Dinner</button><button>🍰<!-- --> <!-- -->Desserts</button><button>🥨<!-- --> <!-- -->Snacks</button><button>🥤<!-- --> <!-- -->Drinks</button><button>🌱<!-- --> <!-- -->Vegan</button><button>⏱️<!-- --> <!-- -->30-Min Meals</button></div></section><section><div><article><a href="/recipes/creamy-tuscan-garlic-chicken/"><div><img src="/images/creamy-tuscan-garlic-chicken.jpg" alt="Creamy Tuscan Garlic Chicken" loading="lazy"/></div><div><span><span>🍝</span><span>Dinner</span></span><h3>Creamy Tuscan Garlic Chicken</h3><p>Sun-dried tomatoes, garlic, and spinach in a creamy parmesan sauce over tender chicken breasts.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>35<!-- --> min</span></div></div></a></article><article><a href="/recipes/fluffy-japanese-souffle-pancakes/"><div><img src="/images/fluffy-japanese-souffle-pancakes.jpg" alt="Fluffy Japanese Soufflé Pancakes" loading="lazy"/></div><div><span><span>🥞</span><span>Breakfast</span></span><h3>Fluffy Japanese Soufflé Pancakes</h3><p>Impossibly fluffy and jiggly pancakes that melt in your mouth, topped with fresh berries and maple syrup.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>30<!-- --> min</span></div></div></a></article><article><a href="/recipes/mediterranean-quinoa-power-bowl/"><div><img src="/images/mediterranean-quinoa-power-bowl.jpg" alt="Mediterranean Quinoa Power Bowl" loading="lazy"/></div><div><span><span>🥗</span><span>Lunch</span></span><h3>Mediterranean Quinoa Power Bowl</h3><p>A vibrant and nutritious bowl packed with quinoa, roasted veggies, feta, and a lemon-tahini dressing.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>35<!-- --> min</span></div></div></a></article><article><a href="/recipes/classic-tiramisu/"><div><img src="/images/classic-tiramisu.jpg" alt="Classic Tiramisu" loading="lazy"/></div><div><span><span>🍰</span><span>Desserts</span></span><h3>Classic Tiramisu</h3><p>Layers of espresso-soaked ladyfingers and mascarpone cream dusted with rich cocoa powder.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>30<!-- --> min</span></div></div></a></article><article><a href="/recipes/spicy-thai-basil-stir-fry/"><div><img src="/images/spicy-thai-basil-stir-fry.jpg" alt="Spicy Thai Basil Stir-Fry" loading="lazy"/></div><div><span><span>🍝</span><span>Dinner</span></span><h3>Spicy Thai Basil Stir-Fry</h3><p>A fiery and aromatic stir-fry with ground pork, Thai basil, and chilies served over jasmine rice.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>20<!-- --> min</span></div></div></a></article><article><a href="/recipes/lemon-garlic-butter-shrimp"><div><img src="/images/lemon-garlic-butter-shrimp.jpeg" alt="Lemon Garlic Butter Shrimp" loading="lazy"/></div><div><span><span>🍝</span><span>Dinner</span></span><h3>Lemon Garlic Butter Shrimp</h3><p>Juicy shrimp cooked in a zesty lemon garlic butter sauce, served over rice or pasta.</p><div><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>25<!-- --> min</span></div></div></a></article></div></section></main>`,
@@ -79,6 +171,11 @@ const recipePages: Page[] = recipes.map((recipe, index) => ({
   header: header(
     `${recipe.title} Recipe – Easy & Delicious ${recipe.category.name} | Delishly Recipes`,
     `Learn how to make ${recipe.title}, a ${recipe.category.name} recipe with step-by-step instructions, prep time, and tips. Perfect for home cooking!`,
+    recipe.url,
+    "recipe",
+    undefined,
+    `${BASE_URL}${recipe.image}`,
+    recipe,
   ),
   body: body(recipesBodies[index], false),
 }));
