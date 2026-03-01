@@ -54,7 +54,7 @@ export const Home = () => {
               </a>
               <a
                 href="/"
-                className="flex items-center bg-background/10 border-2 border-background/50 text-background hover:bg-background/25 rounded-full px-8"
+                className="flex items-center py-2 bg-background/10 border-2 border-background/50 text-background hover:bg-background/25 rounded-full px-8"
               >
                 30-Minute Meals
               </a>
