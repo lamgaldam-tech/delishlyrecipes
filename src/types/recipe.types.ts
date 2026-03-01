@@ -26,7 +26,7 @@ export interface Recipe {
     };
     ingerdiants: {
       quantity: string;
-      ingrediant: string;
+      ingredient: string;
     }[];
     overview: {
       header: string;
