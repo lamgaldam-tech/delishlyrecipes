@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Send } from "lucide-react";
 
 export const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <section className="bg-secondary/50 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -86,16 +85,16 @@ export const Contact = () => {
                 required
                 className="w-full px-5 py-3 rounded-lg bg-card border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
               />
-              <Button
+              <button
                 type="submit"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
+                className="flex items-center py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
               >
                 <Send className="w-4 h-4 mr-2" /> Send Message
-              </Button>
+              </button>
             </form>
           )}
         </div>
       </section>
-    </div>
+    </main>
   );
 };

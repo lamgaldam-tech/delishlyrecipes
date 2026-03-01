@@ -21,7 +21,7 @@ export const Home = () => {
   }));
 
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -45,73 +45,74 @@ export const Home = () => {
               Discover easy, delicious, and tested recipes for every occasion.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button onClick={() => (window.location.href = "/recipes/")}>
-                <Button
-                  size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-8 rounded-full"
-                >
-                  Browse Recipes <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </button>
-              <button onClick={() => (window.location.href = "/recipes/")}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-background/30 text-background hover:bg-background/10 rounded-full px-8"
-                >
-                  30-Minute Meals
-                </Button>
-              </button>
+              <a
+                href="/recipes/"
+                className="flex items-center py-2 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-8 rounded-full"
+              >
+                <span>Browse Recipes</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+              <a
+                href="/"
+                className="flex items-center bg-background/10 border-2 border-background/50 text-background hover:bg-background/25 rounded-full px-8"
+              >
+                30-Minute Meals
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Recipes */}
-      <section className="container mx-auto px-4 py-20">
+      <section
+        aria-labelledby="featured-recipes"
+        className="container mx-auto px-4 py-20"
+      >
         <div className="flex items-end justify-between mb-10">
           <div>
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
               Handpicked
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1">
+            <h2
+              id="featured-recipes"
+              className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1"
+            >
               Featured Recipes
             </h2>
           </div>
-          <button
-            onClick={() => (window.location.href = "/recipes/")}
+          <a
+            href="/recipes/"
             className="text-sm font-medium text-primary hover:underline hidden sm:block"
           >
             View all →
-          </button>
+          </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[recipes[0], recipes[1], recipes[2]].map((r) => (
-            <RecipeCard
-              key={r.title}
-              recipe={r}
-              onClick={() => (window.location.href = r.url)}
-            />
+          {recipes.slice(-3).map((r) => (
+            <RecipeCard key={r.title} recipe={r} />
           ))}
         </div>
       </section>
 
       {/* Categories */}
-      <section className="bg-secondary/50 py-20">
+      <section aria-labelledby="categories" className="bg-secondary/50 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
               Browse by
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1">
+            <h2
+              id="categories"
+              className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1"
+            >
               Categories
             </h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {categories.map((c) => (
-              <button
+              <a
                 key={c.name}
-                onClick={() => (window.location.href = "/recipes/")}
+                href="/recipes/"
                 className="bg-card rounded-xl p-6 text-center shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all duration-300"
               >
                 <span className="text-3xl block mb-3">{c.emoji}</span>
@@ -121,40 +122,48 @@ export const Home = () => {
                 <p className="text-xs text-muted-foreground mt-1">
                   {c.count} recipes
                 </p>
-              </button>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
       {/* Trending */}
-      <section className="container mx-auto px-4 py-20">
+      <section
+        aria-labelledby="trending-now"
+        className="container mx-auto px-4 py-20"
+      >
         <div className="flex items-end justify-between mb-10">
           <div>
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
               What's Hot
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1">
+            <h2
+              id="trending-now"
+              className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1"
+            >
               Trending Now
             </h2>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[recipes[0], recipes[1], recipes[2]].map((r) => (
-            <RecipeCard
-              key={r.title}
-              recipe={r}
-              onClick={() => (window.location.href = r.url)}
-            />
+            <RecipeCard key={r.title} recipe={r} />
           ))}
         </div>
       </section>
 
       {/* Newsletter */}
-      <section className="bg-primary/5 py-20">
+      <section
+        aria-labelledby="get-weekly-recipes"
+        className="bg-primary/5 py-20"
+      >
         <div className="container mx-auto px-4 text-center max-w-lg">
           <span className="text-3xl block mb-4">📬</span>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-3">
+          <h2
+            id="get-weekly-recipes"
+            className="font-display text-3xl font-bold text-foreground mb-3"
+          >
             Get Weekly Recipes
           </h2>
           <p className="text-muted-foreground mb-8">
@@ -178,6 +187,7 @@ export const Home = () => {
             />
             <Button
               type="submit"
+              aria-label="Subscribe to weekly recipes"
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
             >
               Subscribe
@@ -185,6 +195,6 @@ export const Home = () => {
           </form>
         </div>
       </section>
-    </div>
+    </main>
   );
 };

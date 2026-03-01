@@ -4,7 +4,7 @@ import { Layout } from "@/components/Layout";
 import { Contact } from "@/pages/Contact";
 import "@/global.css";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.querySelector("body")!).render(
   <React.StrictMode>
     <Layout>
       <Contact />

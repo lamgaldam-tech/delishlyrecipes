@@ -1,5 +1,5 @@
 export const About = () => (
-  <div className="min-h-screen">
+  <main className="min-h-screen">
     <section className="bg-secondary/50 py-20">
       <div className="container mx-auto px-4 text-center">
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -45,5 +45,5 @@ export const About = () => (
         </p>
       </div>
     </section>
-  </div>
+  </main>
 );

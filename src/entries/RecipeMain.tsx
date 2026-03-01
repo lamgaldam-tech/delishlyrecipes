@@ -10,13 +10,12 @@ const parts = url.split("/").filter(Boolean);
 const slug = parts[parts.length - 1];
 const recipe = recipes.find((r) => r.slug === slug);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.querySelector("body")!).render(
   <React.StrictMode>
     <Layout>
       {recipe ? (
         <RecipePage
           recipe={recipe}
-          onBack={() => (window.location.href = "/recipes")}
         />
       ) : (
         <div>Recipe not found</div>

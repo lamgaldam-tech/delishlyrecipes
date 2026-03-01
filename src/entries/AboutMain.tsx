@@ -4,7 +4,7 @@ import { Layout } from "@/components/Layout";
 import { About } from "@/pages/About";
 import "@/global.css";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.querySelector("body")!).render(
   <React.StrictMode>
     <Layout>
       <About />

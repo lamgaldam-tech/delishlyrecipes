@@ -6,10 +6,9 @@ import type { Recipe } from "@/types/recipe.types";
 
 interface RecipeProps {
   recipes: Recipe[];
-  onCardClick: (recipe: Recipe) => void;
 }
 
-export const Recipes = ({ recipes, onCardClick }: RecipeProps) => {
+export const Recipes = ({ recipes }: RecipeProps) => {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
@@ -25,7 +24,7 @@ export const Recipes = ({ recipes, onCardClick }: RecipeProps) => {
   });
 
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       {/* Header */}
       <section className="bg-secondary/50 py-16">
         <div className="container mx-auto px-4 text-center">
@@ -41,7 +40,7 @@ export const Recipes = ({ recipes, onCardClick }: RecipeProps) => {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
 
             <input
-              type="text"
+              type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search recipes, tags..."
@@ -86,7 +85,7 @@ export const Recipes = ({ recipes, onCardClick }: RecipeProps) => {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((r) => (
-              <RecipeCard key={r.slug} recipe={r} onClick={onCardClick} />
+              <RecipeCard key={r.slug} recipe={r}/>
             ))}
           </div>
         ) : (
@@ -95,6 +94,6 @@ export const Recipes = ({ recipes, onCardClick }: RecipeProps) => {
           </p>
         )}
       </section>
-    </div>
+    </main>
   );
 };

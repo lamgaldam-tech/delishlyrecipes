@@ -12,11 +12,9 @@ import type { Recipe } from "@/types/recipe.types";
 
 interface RecipeProps {
   recipe: Recipe;
-  onBack: () => void;
-  // onCardClick: (recipe: Recipe) => void;
 }
 
-export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
+export const RecipePage = ({ recipe }: RecipeProps) => {
   const [servingMultiplier, setServingMultiplier] = useState(1);
 
   const details = recipe.sections.details;
@@ -61,7 +59,7 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
   return (
     <>
       {/* Hero */}
-      <div className="relative h-[50vh] md:h-[60vh]">
+      <header className="relative h-[50vh] md:h-[60vh]">
         <img
           src={recipe.image}
           alt={recipe.title}
@@ -72,12 +70,12 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="container mx-auto">
             {/* Back Button */}
-            <button
-              onClick={onBack}
+            <a
+              href="/"
               className="inline-flex items-center gap-1.5 text-sm text-background/80 hover:text-background mb-4 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" /> All Recipes
-            </button>
+            </a>
 
             {/* Category */}
             <span className="inline-flex items-center gap-2 mx-4 text-xs font-medium text-primary bg-primary/20 px-3 py-1 rounded-full mb-3">
@@ -90,95 +88,118 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
             </h1>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
-          {/* Main */}
+          {/* Main Content */}
           <div className="lg:col-span-2 space-y-10">
-            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-              {Paragraph(recipe.description)}
-            </p>
+            <section>
+              <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+                {Paragraph(recipe.description)}
+              </p>
+            </section>
+
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                {
-                  icon: Clock,
-                  label: "Prep",
-                  value: `${details.prep} min`,
-                },
-                {
-                  icon: Clock,
-                  label: "Cook",
-                  value: `${details.cook} min`,
-                },
-                {
-                  icon: Users,
-                  label: "Servings",
-                  value: String(adjustedServings),
-                },
-                {
-                  icon: Flame,
-                  label: "Calories",
-                  value: String(
-                    Math.round(details.calories * servingMultiplier),
-                  ),
-                },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="bg-secondary/50 rounded-xl p-4 text-center"
-                >
-                  <s.icon className="w-5 h-5 mx-auto text-primary mb-2" />
-                  <p className="text-xs text-muted-foreground">{s.label}</p>
-                  <p className="font-semibold text-foreground">{s.value}</p>
-                </div>
-              ))}
-            </div>
+            <section
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4"
+              aria-label="Recipe Quick Stats"
+            >
+              {/* Prep */}
+              <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                <Clock className="w-5 h-5 mx-auto text-primary mb-2" />
+                <p className="text-xs text-muted-foreground">Prep</p>
+                <time dateTime={`PT${details.prep}M`}>{details.prep} min</time>
+              </div>
+
+              {/* Cook */}
+              <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                <Clock className="w-5 h-5 mx-auto text-primary mb-2" />
+                <p className="text-xs text-muted-foreground">Cook</p>
+                <time dateTime={`PT${details.cook}M`}>{details.cook} min</time>
+              </div>
+
+              {/* Servings */}
+              <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                <Users className="w-5 h-5 mx-auto text-primary mb-2" />
+                <p className="text-xs text-muted-foreground">Servings</p>
+                <p className="font-semibold text-foreground">
+                  {adjustedServings}
+                </p>
+              </div>
+
+              {/* Calories */}
+              <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                <Flame className="w-5 h-5 mx-auto text-primary mb-2" />
+                <p className="text-xs text-muted-foreground">Calories</p>
+                <p className="font-semibold text-foreground">
+                  {Math.round(details.calories * servingMultiplier)}
+                </p>
+              </div>
+            </section>
 
             {/* Overview */}
-            <div>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+            <section aria-labelledby="overview-header">
+              <h2
+                id="overview-header"
+                className="font-display text-2xl font-bold text-foreground mb-4"
+              >
                 {recipe.sections.overview.header}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
                 {Paragraph(recipe.sections.overview.paragraph)}
               </p>
-            </div>
+            </section>
+
             {/* Instructions */}
-            <div>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+            <section aria-labelledby="instructions-header">
+              <h2
+                id="instructions-header"
+                className="font-display text-2xl font-bold text-foreground mb-6"
+              >
                 {recipe.sections.instructions.header}
               </h2>
               <p className="text-foreground/80 leading-relaxed whitespace-pre-line">
                 {Paragraph(recipe.sections.instructions.paragraph)}
               </p>
-            </div>
+            </section>
 
             {/* Tips */}
-            <div>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+            <section aria-labelledby="tips-header">
+              <h2
+                id="tips-header"
+                className="font-display text-2xl font-bold text-foreground mb-6"
+              >
                 {recipe.sections.tips.header}
               </h2>
               <p className="text-foreground/80 leading-relaxed whitespace-pre-line">
                 {Paragraph(recipe.sections.tips.paragraph)}
               </p>
-            </div>
+            </section>
 
             {/* FAQ */}
-            <div>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+            <section aria-labelledby="faq-header">
+              <h2
+                id="faq-header"
+                className="font-display text-2xl font-bold text-foreground mb-6"
+              >
                 {recipe.sections.faq.header}
               </h2>
               <p className="text-foreground/80 leading-relaxed whitespace-pre-line">
                 {Paragraph(recipe.sections.faq.paragraph)}
               </p>
-            </div>
+            </section>
 
             {/* More Like */}
-            <div className="flex flex-col gap-3">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+            <section
+              aria-labelledby="more-like-header"
+              className="flex flex-col gap-3"
+            >
+              <h2
+                id="more-like-header"
+                className="font-display text-2xl font-bold text-foreground mb-6"
+              >
                 {recipe.sections.more.header}
               </h2>
               {recipe.sections.more.recipes.map((r) => (
@@ -193,15 +214,21 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
                   {r.title}
                 </a>
               ))}
-            </div>
+            </section>
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-8">
+          <aside className="space-y-8">
             {/* Ingredients */}
-            <div className="bg-card rounded-xl shadow-card p-6 top-20">
-              <div className="flex items-center justify-between mb-5">
-                <h2 className="font-display text-xl font-bold text-foreground">
+            <section
+              className="bg-card rounded-xl shadow-card p-6 top-20"
+              aria-labelledby="ingredients-header"
+            >
+              <header className="flex items-center justify-between mb-5">
+                <h2
+                  id="ingredients-header"
+                  className="font-display text-xl font-bold text-foreground"
+                >
                   Ingredients
                 </h2>
 
@@ -230,7 +257,7 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
                     <Plus className="w-3 h-3" />
                   </button>
                 </div>
-              </div>
+              </header>
 
               <ul className="space-y-3">
                 {recipe.sections.ingerdiants.map((ing, i) => (
@@ -238,7 +265,9 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
                     <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                     <span className="text-foreground/80">
                       <strong className="text-foreground">
-                        {ing.quantity}
+                        {!isNaN(Number(ing.quantity.split(" ")[0]))
+                          ? `${Number(ing.quantity.split(" ")[0]) * servingMultiplier} ${ing.quantity.split(" ").slice(1).join(" ")}`
+                          : ing.quantity}
                       </strong>{" "}
                       {ing.ingrediant}
                     </span>
@@ -253,11 +282,14 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
                 <Printer className="w-4 h-4" />
                 Print Recipe
               </button>
-            </div>
+            </section>
 
             {/* Tags */}
-            <div>
-              <h3 className="font-display text-sm font-semibold text-foreground mb-3">
+            <section aria-labelledby="tags-header">
+              <h3
+                id="tags-header"
+                className="font-display text-sm font-semibold text-foreground mb-3"
+              >
                 Tags
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -270,10 +302,10 @@ export const RecipePage = ({ recipe, onBack }: RecipeProps) => {
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
+            </section>
+          </aside>
         </div>
-      </div>
+      </main>
     </>
   );
 };
