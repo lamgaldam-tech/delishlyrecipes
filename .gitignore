@@ -1,0 +1,15 @@
+# Environment
+.env
+
+# Build / output folders
+dist/
+.next/
+
+# Dependencies
+node_modules/
+
+# Generated files
+next-env.d.ts
+
+# local
+*.local
