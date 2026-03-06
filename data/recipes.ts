@@ -716,5 +716,66 @@ export const recipes: Recipe[] = [
       "American dinner"
     ],
     "links": []
+  },
+  {
+    "title": "New Recipe",
+    "slug": "new-recipe",
+    "url": "/recipes/new-recipe/",
+    "image": "/images/new-recipe.png",
+    "category": {
+      "name": "Breakfast",
+      "emoji": "🥞"
+    },
+    "description": "gsdgshshsdhsdhsdh",
+    "sections": {
+      "details": {
+        "prep": 2,
+        "cook": 1,
+        "servings": 1,
+        "calories": 3
+      },
+      "ingerdiants": [
+        {
+          "quantity": "s",
+          "ingredient": "dhshsdhsh"
+        }
+      ],
+      "overview": {
+        "header": "About New Recipe",
+        "paragraph": "sdhshsdhsh"
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "sdhsdhsdhsdh"
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "sdhsdhsdhsssssssssssssssss"
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "sdhsdhsdhsdhsdhdsh"
+      },
+      "more": {
+        "header": "More Like New Recipe",
+        "recipes": [
+          {
+            "title": "Creamy Tuscan Garlic Chicken",
+            "url": "/recipes/creamy-tuscan-garlic-chicken"
+          },
+          {
+            "title": "Fluffy Japanese Soufflé Pancakes",
+            "url": "/recipes/fluffy-japanese-souffle-pancakes"
+          }
+        ]
+      }
+    },
+    "tags": [
+      "sdhshsdhm",
+      "sdhshs",
+      "sdhsdh",
+      "sdh"
+    ],
+    "links": []
   }
 ];
