@@ -24,7 +24,6 @@ export default function FormPage() {
   const recipeToEdit = recipes.find((r) => r.slug === slug);
 
   const [image, setImage] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -66,18 +65,6 @@ export default function FormPage() {
       tags: recipeToEdit.tags ?? [],
     });
   }, [recipeToEdit]);
-
-  useEffect(() => {
-    if (!image) {
-      setPreview(null);
-      return;
-    }
-
-    const objectUrl = URL.createObjectURL(image);
-    setPreview(objectUrl);
-
-    return () => URL.revokeObjectURL(objectUrl);
-  }, [image]);
 
   const handleSubmit = async () => {
     if (!token) return setError("Unauthorized");
