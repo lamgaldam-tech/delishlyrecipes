@@ -53,8 +53,4 @@ export interface Recipe {
     };
   };
   tags: string[];
-  links: {
-    keyword: string;
-    url: string;
-  }[];
 }
