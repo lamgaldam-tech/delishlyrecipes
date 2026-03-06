@@ -44,7 +44,6 @@ export default function FormPage() {
       more: { recipes: [] },
     },
     tags: [],
-    links: [],
   });
 
   useEffect(() => {
@@ -65,7 +64,6 @@ export default function FormPage() {
         more: recipeToEdit.sections.more ?? { recipes: [] },
       },
       tags: recipeToEdit.tags ?? [],
-      links: recipeToEdit.links ?? [],
     });
   }, [recipeToEdit]);
 
@@ -130,7 +128,9 @@ export default function FormPage() {
     <div className="container mx-auto max-w-3xl py-16 px-4 space-y-6">
       <button
         className="flex items-center gap-2 text-gray-500 hover:text-gray-800 transition-colors duration-200 px-3 py-2 rounded"
-        onClick={() => recipeToEdit ? router.replace(recipeToEdit.url) : router.replace("/")}
+        onClick={() =>
+          recipeToEdit ? router.replace(recipeToEdit.url) : router.replace("/")
+        }
       >
         <ChevronLeft className="w-5 h-5" />
         <p className="font-medium">Go Back</p>
@@ -462,55 +462,6 @@ export default function FormPage() {
         }
         className="w-full border p-2 rounded"
       />
-
-      {/* Links */}
-      <h2 className="font-bold mt-4">Links</h2>
-      {form.links.map((link, i) => (
-        <div key={i} className="flex gap-2 mb-2">
-          <input
-            placeholder="Keyword"
-            value={link.keyword}
-            onChange={(e) => {
-              const newLinks = [...form.links];
-              newLinks[i].keyword = e.target.value;
-              setForm({ ...form, links: newLinks });
-            }}
-            className="border p-2 rounded flex-1"
-          />
-          <input
-            placeholder="URL"
-            value={link.url}
-            onChange={(e) => {
-              const newLinks = [...form.links];
-              newLinks[i].url = e.target.value;
-              setForm({ ...form, links: newLinks });
-            }}
-            className="border p-2 rounded flex-1"
-          />
-          <button
-            type="button"
-            onClick={() => {
-              const newLinks = form.links.filter((_, idx) => idx !== i);
-              setForm({ ...form, links: newLinks });
-            }}
-            className="text-red-500 px-2"
-          >
-            X
-          </button>
-        </div>
-      ))}
-      <button
-        type="button"
-        onClick={() =>
-          setForm({
-            ...form,
-            links: [...form.links, { keyword: "", url: "" }],
-          })
-        }
-        className="bg-primary text-white py-2 px-4 rounded mb-4"
-      >
-        Add Link
-      </button>
 
       {/* Submit */}
       {error && <p className="text-red-500">{error}</p>}
