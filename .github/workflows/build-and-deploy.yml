@@ -1,0 +1,43 @@
+name: Build and Deploy Dist
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with Vite
+        run: npm run vite:build
+
+      - name: Push dist to build branch
+        run: |
+          git config user.name "Delishly Recipes Bot"
+          git config user.email "bot@delishlyrecipes.com"
+          git checkout --orphan build
+          git rm -rf . || true
+          cp -r dist/. .
+          rm -rf node_modules dist
+          git add .
+          git commit -m "Deploy dist from GitHub Actions" || echo "No changes"
+          git push origin build --force
