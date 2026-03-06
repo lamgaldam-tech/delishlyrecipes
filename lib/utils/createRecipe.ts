@@ -38,10 +38,6 @@ export interface RecipeInput {
   };
 
   tags: string[];
-  links: {
-    keyword: string;
-    url: string;
-  }[];
 }
 
 function slugify(title: string): string {
@@ -94,6 +90,5 @@ export const createRecipe = (input: RecipeInput): Recipe => {
     },
 
     tags: input.tags,
-    links: input.links,
   };
 };
