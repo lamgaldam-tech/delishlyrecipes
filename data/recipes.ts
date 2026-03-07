@@ -4,11 +4,12 @@ export const recipes: Recipe[] = [
   {
     title: "Creamy Tuscan Garlic Chicken",
     slug: "creamy-tuscan-garlic-chicken",
-    url: "/recipes/creamy-tuscan-garlic-chicken",
+    url: "/recipes/creamy-tuscan-garlic-chicken/",
     image: "/images/creamy-tuscan-garlic-chicken.jpg",
     category: {
       name: "Dinner",
       emoji: "🍝",
+      url: "/recipes/categories/dinner/",
     },
     description:
       "Sun-dried tomatoes, garlic, and spinach in a creamy parmesan sauce over tender chicken breasts.",
@@ -78,16 +79,24 @@ export const recipes: Recipe[] = [
         recipes: [],
       },
     },
-    tags: ["chicken", "italian", "creamy", "quick"],
+    tags: [
+      { tag: "chicken", url: "/recipes/tags/chicken/" },
+      { tag: "dinner", url: "/recipes/tags/dinner/" },
+      { tag: "italian", url: "/recipes/tags/italian/" },
+      { tag: "creamy", url: "/recipes/tags/creamy/" },
+      { tag: "garlic", url: "/recipes/tags/garlic/" },
+      { tag: "comfort-food", url: "/recipes/tags/comfort-food/" },
+    ],
   },
   {
     title: "Fluffy Japanese Soufflé Pancakes",
     slug: "fluffy-japanese-souffle-pancakes",
-    url: "/recipes/fluffy-japanese-souffle-pancakes",
+    url: "/recipes/fluffy-japanese-souffle-pancakes/",
     image: "/images/fluffy-japanese-souffle-pancakes.jpg",
     category: {
       name: "Breakfast",
       emoji: "🥞",
+      url: "/recipes/categories/breakfast/",
     },
     description:
       "Impossibly fluffy and jiggly pancakes that melt in your mouth, topped with fresh berries and maple syrup.",
@@ -157,29 +166,37 @@ export const recipes: Recipe[] = [
         recipes: [
           {
             title: "Garlic Butter Chicken Thighs",
-            url: "/recipes/garlic-butter-chicken-thighs",
+            url: "/recipes/garlic-butter-chicken-thighs/",
           },
           {
             title: "One-Pan Creamy Mushroom Chicken",
-            url: "/recipes/one-pan-creamy-mushroom-chicken",
+            url: "/recipes/one-pan-creamy-mushroom-chicken/",
           },
           {
             title: "Parmesan Crusted Chicken",
-            url: "/recipes/parmesan-crusted-chicken",
+            url: "/recipes/parmesan-crusted-chicken/",
           },
         ],
       },
     },
-    tags: ["pancakes", "japanese", "breakfast", "fluffy"],
+    tags: [
+      { tag: "pancakes", url: "/recipes/tags/pancakes/" },
+      { tag: "breakfast", url: "/recipes/tags/breakfast/" },
+      { tag: "japanese", url: "/recipes/tags/japanese/" },
+      { tag: "souffle", url: "/recipes/tags/souffle/" },
+      { tag: "sweet", url: "/recipes/tags/sweet/" },
+      { tag: "fluffy", url: "/recipes/tags/fluffy/" },
+    ],
   },
   {
     title: "Mediterranean Quinoa Power Bowl",
     slug: "mediterranean-quinoa-power-bowl",
-    url: "/recipes/mediterranean-quinoa-power-bowl",
+    url: "/recipes/mediterranean-quinoa-power-bowl/",
     image: "/images/mediterranean-quinoa-power-bowl.jpg",
     category: {
       name: "Lunch",
       emoji: "🥗",
+      url: "/recipes/categories/lunch/",
     },
     description:
       "A vibrant and nutritious bowl packed with quinoa, roasted veggies, feta, and a lemon-tahini dressing.",
@@ -249,29 +266,37 @@ export const recipes: Recipe[] = [
         recipes: [
           {
             title: "Matcha Soufflé Pancakes",
-            url: "/recipes/matcha-souffle-pancakes",
+            url: "/recipes/matcha-souffle-pancakes/",
           },
           {
             title: "Japanese Cheesecake Pancakes",
-            url: "/recipes/japanese-cheesecake-pancakes",
+            url: "/recipes/japanese-cheesecake-pancakes/",
           },
           {
             title: "Fluffy Lemon Pancakes",
-            url: "/recipes/fluffy-lemon-pancakes",
+            url: "/recipes/fluffy-lemon-pancakes/",
           },
         ],
       },
     },
-    tags: ["healthy", "vegan-option", "mediterranean", "bowl"],
+    tags: [
+      { tag: "quinoa", url: "/recipes/tags/quinoa/" },
+      { tag: "lunch", url: "/recipes/tags/lunch/" },
+      { tag: "healthy", url: "/recipes/tags/healthy/" },
+      { tag: "mediterranean", url: "/recipes/tags/mediterranean/" },
+      { tag: "vegetarian", url: "/recipes/tags/vegetarian/" },
+      { tag: "bowl", url: "/recipes/tags/bowl/" },
+    ],
   },
   {
     title: "Classic Tiramisu",
     slug: "classic-tiramisu",
-    url: "/recipes/classic-tiramisu",
+    url: "/recipes/classic-tiramisu/",
     image: "/images/classic-tiramisu.jpg",
     category: {
       name: "Desserts",
       emoji: "🍰",
+      url: "/recipes/categories/desserts/",
     },
     description:
       "Layers of espresso-soaked ladyfingers and mascarpone cream dusted with rich cocoa powder.",
@@ -341,29 +366,37 @@ export const recipes: Recipe[] = [
         recipes: [
           {
             title: "Greek Quinoa Salad",
-            url: "/recipes/greek-quinoa-salad",
+            url: "/recipes/greek-quinoa-salad/",
           },
           {
-            title: "Roasted Veggie Buddha Bowl",
-            url: "/recipes/roasted-veggie-buddha-bowl",
+            title: "Roasted Veggie Buddha Bowl/",
+            url: "/recipes/roasted-veggie-buddha-bowl/",
           },
           {
             title: "Mediterranean Chickpea Bowl",
-            url: "/recipes/mediterranean-chickpea-bowl",
+            url: "/recipes/mediterranean-chickpea-bowl/",
           },
         ],
       },
     },
-    tags: ["italian", "dessert", "no-bake", "classic"],
+    tags: [
+      { tag: "dessert", url: "/recipes/tags/dessert/" },
+      { tag: "tiramisu", url: "/recipes/tags/tiramisu/" },
+      { tag: "italian", url: "/recipes/tags/italian/" },
+      { tag: "coffee", url: "/recipes/tags/coffee/" },
+      { tag: "sweet", url: "/recipes/tags/sweet/" },
+      { tag: "layered", url: "/recipes/tags/layered/" },
+    ],
   },
   {
     title: "Spicy Thai Basil Stir-Fry",
     slug: "spicy-thai-basil-stir-fry",
-    url: "/recipes/spicy-thai-basil-stir-fry",
+    url: "/recipes/spicy-thai-basil-stir-fry/",
     image: "/images/spicy-thai-basil-stir-fry.jpg",
     category: {
       name: "Dinner",
       emoji: "🍝",
+      url: "/recipes/categories/dinner/",
     },
     description:
       "A fiery and aromatic stir-fry with ground pork, Thai basil, and chilies served over jasmine rice.",
@@ -433,20 +466,27 @@ export const recipes: Recipe[] = [
         recipes: [
           {
             title: "No-Bake Chocolate Tiramisu",
-            url: "/recipes/no-bake-chocolate-tiramisu",
+            url: "/recipes/no-bake-chocolate-tiramisu/",
           },
           {
             title: "Strawberry Tiramisu Cups",
-            url: "/recipes/strawberry-tiramisu-cups",
+            url: "/recipes/strawberry-tiramisu-cups/",
           },
           {
             title: "Coffee Panna Cotta",
-            url: "/recipes/coffee-panna-cotta",
+            url: "/recipes/coffee-panna-cotta/",
           },
         ],
       },
     },
-    tags: ["thai", "spicy", "quick", "stir-fry"],
+    tags: [
+      { tag: "thai", url: "/recipes/tags/thai/" },
+      { tag: "dinner", url: "/recipes/tags/dinner/" },
+      { tag: "stir-fry", url: "/recipes/tags/stir-fry/" },
+      { tag: "spicy", url: "/recipes/tags/spicy/" },
+      { tag: "basil", url: "/recipes/tags/basil/" },
+      { tag: "quick-meal", url: "/recipes/tags/quick-meal/" },
+    ],
   },
   {
     title: "Lemon Garlic Butter Shrimp",
@@ -456,6 +496,7 @@ export const recipes: Recipe[] = [
     category: {
       name: "Dinner",
       emoji: "🍝",
+      url: "/recipes/categories/dinner/",
     },
     description:
       "Juicy shrimp cooked in a zesty lemon garlic butter sauce, served over rice or pasta.",
@@ -525,20 +566,27 @@ export const recipes: Recipe[] = [
         recipes: [
           {
             title: "Creamy Tuscan Garlic Chicken",
-            url: "/recipes/creamy-tuscan-garlic-chicken",
+            url: "/recipes/creamy-tuscan-garlic-chicken/",
           },
           {
             title: "Spicy Thai Basil Stir-Fry",
-            url: "/recipes/spicy-thai-basil-stir-fry",
+            url: "/recipes/spicy-thai-basil-stir-fry/",
           },
           {
             title: "Classic Tiramisu",
-            url: "/recipes/classic-tiramisu",
+            url: "/recipes/classic-tiramisu/",
           },
         ],
       },
     },
-    tags: ["Recipe", "dinner", "Lemon"],
+    tags: [
+      { tag: "shrimp", url: "/recipes/tags/shrimp/" },
+      { tag: "seafood", url: "/recipes/tags/seafood/" },
+      { tag: "dinner", url: "/recipes/tags/dinner/" },
+      { tag: "garlic", url: "/recipes/tags/garlic/" },
+      { tag: "lemon", url: "/recipes/tags/lemon/" },
+      { tag: "quick-meal", url: "/recipes/tags/quick-meal/" },
+    ],
   },
   {
     title:
@@ -550,6 +598,7 @@ export const recipes: Recipe[] = [
     category: {
       name: "Dinner",
       emoji: "🍝",
+      url: "/recipes/categories/dinner/",
     },
     description:
       "Cream Cheese Chicken Crock Pot is the ultimate creamy comfort food made with simple ingredients and minimal prep time. This easy slow cooker recipe combines tender, juicy chicken with rich cream cheese and savory seasonings to create a smooth, flavorful sauce that melts in your mouth. Just toss everything into the crock pot and let it cook to perfection — no complicated steps required!",
@@ -618,20 +667,29 @@ export const recipes: Recipe[] = [
       more: {
         header:
           "More Like Cream Cheese Chicken Crock Pot – Easy & Ultra Creamy Slow Cooker Recipe",
-        recipes: [],
+        recipes: [
+          {
+            title: "Creamy Tuscan Garlic Chicken",
+            url: "/recipes/creamy-tuscan-garlic-chicken/",
+          },
+          {
+            title: "Spicy Thai Basil Stir-Fry",
+            url: "/recipes/spicy-thai-basil-stir-fry/",
+          },
+          {
+            title: "Classic Tiramisu",
+            url: "/recipes/classic-tiramisu/",
+          },
+        ],
       },
     },
     tags: [
-      "cream cheese chicken",
-      "crock pot chicken",
-      "slow cooker dinner",
-      "creamy chicken recipe",
-      "easy weeknight meal",
-      "comfort food",
-      "dump and go recipe",
-      "family dinner",
-      "high protein recipe",
-      "American dinner",
+      { tag: "chicken", url: "/recipes/tags/chicken/" },
+      { tag: "slow-cooker", url: "/recipes/tags/slow-cooker/" },
+      { tag: "dinner", url: "/recipes/tags/dinner/" },
+      { tag: "creamy", url: "/recipes/tags/creamy/" },
+      { tag: "comfort-food", url: "/recipes/tags/comfort-food/" },
+      { tag: "easy", url: "/recipes/tags/easy/" },
     ],
   },
 ];
