@@ -89,6 +89,9 @@ export const createRecipe = (input: RecipeInput): Recipe => {
       },
     },
 
-    tags: input.tags,
+    tags: input.tags.map((t) => ({
+      tag: t,
+      url: `/recipes/tags/${slugify(t)}/`,
+    })),
   };
 };
