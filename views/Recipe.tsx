@@ -8,34 +8,29 @@ import {
   Minus,
   Plus,
 } from "lucide-react";
-import type { Recipe } from "@/types/recipe.types";
+import type { Recipe, Tag } from "@/types/recipe.types";
 
 interface RecipeProps {
   recipe: Recipe;
+  tags: Tag[];
 }
 
-export const RecipePage = ({ recipe }: RecipeProps) => {
+export const RecipePage = ({ recipe, tags }: RecipeProps) => {
   const [servingMultiplier, setServingMultiplier] = useState(1);
 
   const details = recipe.sections.details;
   const adjustedServings = details.servings * servingMultiplier;
 
   const Paragraph = (paragraph: string): React.ReactNode => {
-    if (!recipe.links || recipe.links.length === 0) return paragraph;
-
-    // Escape all keywords for regex
-    const escapedKeywords = recipe.links.map((link) =>
-      link.keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+    const escapedTags = tags.map((tag) =>
+      tag.tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
     );
-
-    const regex = new RegExp(`\\b(${escapedKeywords.join("|")})\\b`, "gi");
-
+    const regex = new RegExp(`\\b(${escapedTags.join("|")})\\b`, "gi");
     const parts = paragraph.split(regex);
 
     return parts.map((part, index) => {
-      // Find matching link object
-      const match = recipe.links.find(
-        (link) => link.keyword.toLowerCase() === part.toLowerCase(),
+      const match = tags.find(
+        (tag) => tag.tag.toLowerCase() === part.toLowerCase(),
       );
 
       if (match) {
@@ -294,12 +289,13 @@ export const RecipePage = ({ recipe }: RecipeProps) => {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {recipe.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="text-xs bg-secondary text-muted-foreground px-3 py-1.5 rounded-full"
+                  <a
+                    key={t.tag}
+                    href={t.url}
+                    className="text-xs bg-secondary text-muted-foreground px-3 py-1.5 rounded-full hover:text-primary transition-all duration-200"
                   >
-                    #{t}
-                  </span>
+                    #{t.tag}
+                  </a>
                 ))}
               </div>
             </section>

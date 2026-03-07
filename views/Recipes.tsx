@@ -15,7 +15,7 @@ export const Recipes = ({ recipes }: RecipeProps) => {
   const filtered = recipes.filter((r) => {
     const matchSearch =
       r.title.toLowerCase().includes(search.toLowerCase()) ||
-      r.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()));
+      r.tags.some((t) => t.tag.toLowerCase().includes(search.toLowerCase()));
 
     const matchCategory =
       activeCategory === "All" || r.category.name === activeCategory;
@@ -85,7 +85,7 @@ export const Recipes = ({ recipes }: RecipeProps) => {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((r) => (
-              <RecipeCard key={r.slug} recipe={r}/>
+              <RecipeCard key={r.slug} recipe={r} />
             ))}
           </div>
         ) : (

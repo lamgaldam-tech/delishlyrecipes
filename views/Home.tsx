@@ -55,10 +55,10 @@ export const Home = ({ recipes }: HomeProps) => {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
               <a
-                href="/"
+                href={recipeCategories[7].url}
                 className="flex items-center py-2 bg-background/10 border-2 border-background/50 text-background hover:bg-background/25 rounded-full px-8"
               >
-                30-Minute Meals
+                {recipeCategories[7].name}
               </a>
             </div>
           </div>
@@ -114,7 +114,7 @@ export const Home = ({ recipes }: HomeProps) => {
             {categories.map((c) => (
               <a
                 key={c.name}
-                href="/recipes/"
+                href={c.url}
                 className="bg-card rounded-xl p-6 text-center shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all duration-300"
               >
                 <span className="text-3xl block mb-3">{c.emoji}</span>
