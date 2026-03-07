@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.querySelector("body")!).render(
       {recipe ? (
         <RecipePage
           recipe={recipe}
+          tags={Array.from(new Set(recipes.flatMap((r) => r.tags)))}
         />
       ) : (
         <div>Recipe not found</div>
