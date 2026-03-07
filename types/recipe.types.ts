@@ -1,14 +1,23 @@
 export const recipeCategories = [
-  { name: "Breakfast", emoji: "🥞" },
-  { name: "Lunch", emoji: "🥗" },
-  { name: "Dinner", emoji: "🍝" },
-  { name: "Desserts", emoji: "🍰" },
-  { name: "Snacks", emoji: "🥨" },
-  { name: "Drinks", emoji: "🥤" },
-  { name: "Vegan", emoji: "🌱" },
-  { name: "30-Min Meals", emoji: "⏱️" },
+  { name: "Breakfast", emoji: "🥞", url: "/recipes/categories/breakfast/" },
+  { name: "Lunch", emoji: "🥗", url: "/recipes/categories/lunch/" },
+  { name: "Dinner", emoji: "🍝", url: "/recipes/categories/dinner/" },
+  { name: "Desserts", emoji: "🍰", url: "/recipes/categories/desserts/" },
+  { name: "Snacks", emoji: "🥨", url: "/recipes/categories/snacks/" },
+  { name: "Drinks", emoji: "🥤", url: "/recipes/categories/drinks/" },
+  { name: "Vegan", emoji: "🌱", url: "/recipes/categories/vegan/" },
+  {
+    name: "30-Min Meals",
+    emoji: "⏱️",
+    url: "/recipes/categories/30-min-meals/",
+  },
 ] as const;
 export type RecipeCategory = (typeof recipeCategories)[number];
+
+export interface Tag {
+  tag: string;
+  url: string;
+}
 
 export interface Recipe {
   title: string;
@@ -52,5 +61,5 @@ export interface Recipe {
       }[];
     };
   };
-  tags: string[];
+  tags: Tag[];
 }
