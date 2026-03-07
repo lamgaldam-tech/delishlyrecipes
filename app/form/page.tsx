@@ -62,7 +62,7 @@ export default function FormPage() {
         faq: recipeToEdit.sections.faq ?? { paragraph: "" },
         more: recipeToEdit.sections.more ?? { recipes: [] },
       },
-      tags: recipeToEdit.tags ?? [],
+      tags: recipeToEdit.tags.map((t) => t.tag) ?? [],
     });
   }, [recipeToEdit]);
 

@@ -9,7 +9,8 @@ export default function Page() {
   const params = useParams();
   const { token } = useAuth();
   const slug = params?.slug;
-  const recipe = useRecipes().find((r) => r.slug === slug);
+  const recipes = useRecipes();
+  const recipe = recipes.find((r) => r.slug === slug);
 
   const handleDelete = async () => {
     if (!slug) return;
@@ -54,7 +55,7 @@ export default function Page() {
 
   return (
     <>
-      <RecipePage recipe={recipe} />
+      <RecipePage recipe={recipe} tags={Array.from(new Set(recipes.flatMap(r => r.tags)))}/>
       <div className="absolute top-4 right-4 flex items-center gap-4">
         <button
           onClick={() => router.replace(`/form?slug=${recipe.slug}`)}
