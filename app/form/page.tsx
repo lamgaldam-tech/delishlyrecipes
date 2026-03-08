@@ -1,16 +1,13 @@
 "use client";
-
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
-
 import { useAuth } from "@/app/contexts/AuthContext";
-import { useRecipes } from "@/app/contexts/RecipesContext";
-
-import { recipeCategories } from "@/types/recipe.types";
-import type { Recipe } from "@/types/recipe.types";
-
+import { useRecipes } from "@/app/hooks/useRecipes";
+import { useBuild } from "@/app/hooks/useBuild";
 import { createRecipe } from "@/lib/utils/createRecipe";
+import { LoadingPage } from "@/components/LoadingPage";
+import { recipeCategories } from "@/types/recipe.types";
 import type { RecipeInput } from "@/lib/utils/createRecipe";
 
 export default function FormPage() {
@@ -19,7 +16,8 @@ export default function FormPage() {
   const slug = searchParams.get("slug");
 
   const { token } = useAuth();
-  const recipes = useRecipes();
+  const { recipes, isLoading } = useRecipes();
+  const build = useBuild();
 
   const recipeToEdit = recipes.find((r) => r.slug === slug);
 
@@ -90,19 +88,30 @@ export default function FormPage() {
 
       if (image) formData.append("image", image);
 
-      const res = await fetch("/api/recipes", {
-        method: recipeToEdit ? "PUT" : "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await fetch(
+        recipeToEdit
+          ? `/api/recipes?slug=${recipeToEdit.slug}`
+          : "/api/recipes",
+        {
+          method: recipeToEdit ? "PUT" : "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
         },
-        body: formData,
-      });
+      );
 
       if (!res.ok) throw new Error("Failed request");
 
-      const data = (await res.json()) as Recipe;
+      const returnedRecipe = await res.json();
 
-      router.replace(data.url);
+      const updatedRecipes = recipeToEdit
+        ? recipes.map((r) =>
+            r.slug === returnedRecipe.slug ? returnedRecipe : r,
+          )
+        : [...recipes, returnedRecipe];
+
+      await build(updatedRecipes, returnedRecipe.url);
     } catch (err) {
       console.error(err);
       setError("Something went wrong");
@@ -110,6 +119,8 @@ export default function FormPage() {
       setLoading(false);
     }
   };
+
+  if (isLoading) return <LoadingPage />;
 
   return (
     <div className="container mx-auto max-w-3xl py-16 px-4 space-y-6">

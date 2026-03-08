@@ -1,5 +1,4 @@
 import { AuthProvider } from "@/app/contexts/AuthContext";
-import { RecipesProvider } from "@/app/contexts/RecipesContext";
 import "@/globals.css";
 
 export default function RootLayout({
@@ -10,9 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider>
-          <RecipesProvider>{children}</RecipesProvider>
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

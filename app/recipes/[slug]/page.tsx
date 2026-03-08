@@ -1,7 +1,9 @@
 "use client";
 import { useRouter, useParams } from "next/navigation";
 import { useAuth } from "@/app/contexts/AuthContext";
-import { useRecipes } from "@/app/contexts/RecipesContext";
+import { useRecipes } from "@/app/hooks/useRecipes";
+import { useBuild } from "@/app/hooks/useBuild";
+import { LoadingPage } from "@/components/LoadingPage";
 import { RecipePage } from "@/views/Recipe";
 
 export default function Page() {
@@ -9,8 +11,9 @@ export default function Page() {
   const params = useParams();
   const { token } = useAuth();
   const slug = params?.slug;
-  const recipes = useRecipes();
+  const { recipes, isLoading } = useRecipes();
   const recipe = recipes.find((r) => r.slug === slug);
+  const build = useBuild();
 
   const handleDelete = async () => {
     if (!slug) return;
@@ -25,20 +28,18 @@ export default function Page() {
         body: JSON.stringify({ slug }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        console.error("Delete failed:", data.error);
-        alert(`Failed to delete recipe: ${data.error}`);
+        console.error("Delete failed");
         return;
       }
 
-      router.replace("/");
+      await build(recipes.filter((r) => r.slug !== slug));
     } catch (err) {
-      console.error("Unexpected error:", err);
-      alert("An unexpected error occurred while deleting the recipe.");
+      console.error("Unexpected error");
     }
   };
+
+  if (isLoading) return <LoadingPage />;
 
   if (!recipe)
     return (
@@ -55,7 +56,10 @@ export default function Page() {
 
   return (
     <>
-      <RecipePage recipe={recipe} tags={Array.from(new Set(recipes.flatMap(r => r.tags)))}/>
+      <RecipePage
+        recipe={recipe}
+        tags={Array.from(new Set(recipes.flatMap((r) => r.tags)))}
+      />
       <div className="absolute top-4 right-4 flex items-center gap-4">
         <button
           onClick={() => router.replace(`/form?slug=${recipe.slug}`)}

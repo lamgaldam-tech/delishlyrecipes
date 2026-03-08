@@ -1,14 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/app/contexts/AuthContext";
-import { useRecipes } from "@/app/contexts/RecipesContext";
+import { useRecipes } from "@/app/hooks/useRecipes";
+import { LoadingPage } from "@/components/LoadingPage";
 import { Recipes } from "@/views/Recipes";
 
 export default function Page() {
   const router = useRouter();
   const { logout } = useAuth();
-  const recipes = useRecipes();
+  const { recipes, isLoading } = useRecipes();
 
+  if (isLoading) return <LoadingPage />;
   return (
     <>
       {/* Logout */}

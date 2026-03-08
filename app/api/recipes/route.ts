@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { authMiddleware } from "@/lib/middlewares/authMiddleware";
-import { syncDB } from "@/lib/utils/git";
 import { RecipesDB } from "@/lib/db/recipesDB";
 import { ImagesDB } from "@/lib/db/imagesDB";
 import type { Recipe } from "@/types/recipe.types";
@@ -53,13 +52,6 @@ export const POST = async (req: Request) => {
       }
     }
 
-    try {
-      await syncDB();
-    } catch (err) {
-      console.error(err);
-      return NextResponse.json({ error: "Failed to sync DB" }, { status: 500 });
-    }
-
     return NextResponse.json(recipe);
   } catch (err) {
     console.error(err);
@@ -76,15 +68,17 @@ export const PUT = async (req: Request) => {
     }
 
     const formData = await req.formData();
-    const recipeString = formData.get("recipe");
     const imageFile = formData.get("image") as File | null;
+    const recipeString = formData.get("recipe");
+    const recipe: Recipe = JSON.parse(recipeString as string);
 
-    if (!recipeString) {
+    if (!recipe) {
       return NextResponse.json({ error: "Recipe missing" }, { status: 400 });
     }
 
-    const recipe: Recipe = JSON.parse(recipeString as string);
-    if (!recipe.slug) {
+    const { searchParams } = new URL(req.url);
+    const slug = searchParams.get("slug");
+    if (!slug) {
       return NextResponse.json(
         { error: "Recipe slug is required" },
         { status: 400 },
@@ -93,7 +87,7 @@ export const PUT = async (req: Request) => {
 
     let updatedRecipe: Recipe;
     try {
-      updatedRecipe = await RecipesDB.update(recipe);
+      updatedRecipe = await RecipesDB.update(slug, recipe);
     } catch (err) {
       console.error(err);
       return NextResponse.json({ error: "Recipes DB failed" }, { status: 500 });
@@ -101,7 +95,7 @@ export const PUT = async (req: Request) => {
 
     if (imageFile) {
       try {
-        await ImagesDB.update(recipe.slug, imageFile);
+        await ImagesDB.update(slug, recipe.slug, imageFile);
       } catch (err) {
         console.error(err);
         return NextResponse.json(
@@ -109,13 +103,6 @@ export const PUT = async (req: Request) => {
           { status: 500 },
         );
       }
-    }
-
-    try {
-      await syncDB();
-    } catch (err) {
-      console.error(err);
-      return NextResponse.json({ error: "Failed to sync DB" }, { status: 500 });
     }
 
     return NextResponse.json(updatedRecipe);
@@ -152,13 +139,6 @@ export const DELETE = async (req: Request) => {
     } catch (err) {
       console.error(err);
       return NextResponse.json({ error: "Images DB failed" }, { status: 500 });
-    }
-
-    try {
-      await syncDB();
-    } catch (err) {
-      console.error(err);
-      return NextResponse.json({ error: "Failed to sync DB" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
