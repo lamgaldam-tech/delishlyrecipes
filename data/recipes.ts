@@ -716,5 +716,104 @@ export const recipes: Recipe[] = [
       "American dinner"
     ],
     "links": []
+  },
+  {
+    "title": "Best Crack Chicken Crock Pot Recipe – Easy Creamy Slow Cooker Dinner",
+    "slug": "best-crack-chicken-crock-pot-recipe-easy-creamy-slow-cooker-dinner",
+    "url": "/recipes/best-crack-chicken-crock-pot-recipe-easy-creamy-slow-cooker-dinner/",
+    "image": "/images/best-crack-chicken-crock-pot-recipe-easy-creamy-slow-cooker-dinner.png",
+    "category": {
+      "name": "Dinner",
+      "emoji": "🍝"
+    },
+    "description": "Crack Chicken Crock Pot is a rich, creamy, and incredibly flavorful slow cooker recipe that’s perfect for busy weeknights or cozy family dinners. Made with tender chicken, cream cheese, ranch seasoning, crispy bacon, and melted cheddar cheese, this dish creates a savory and irresistible combination that everyone will love.\n\nThis easy dump-and-go crock pot recipe requires only a few simple ingredients and minimal prep time. As the chicken slowly cooks, it becomes juicy and perfectly coated in a creamy, cheesy ranch sauce. Serve it over rice, pasta, baked potatoes, or even in sandwiches for a satisfying and comforting meal.\n\nIf you’re looking for a simple slow cooker dinner that’s packed with flavor and guaranteed to become a family favorite, this Crack Chicken Crock Pot recipe is a must-try.",
+    "sections": {
+      "details": {
+        "prep": 10,
+        "cook": 360,
+        "servings": 6,
+        "calories": 510
+      },
+      "ingerdiants": [
+        {
+          "quantity": "4 boneless",
+          "ingredient": "skinless chicken breasts"
+        },
+        {
+          "quantity": "8 oz (225 g) cream cheese",
+          "ingredient": "softened"
+        },
+        {
+          "quantity": "1 packet ranch seasoning mix",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 cup chicken broth",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 cup shredded cheddar cheese",
+          "ingredient": ""
+        },
+        {
+          "quantity": "6 slices bacon",
+          "ingredient": "cooked and crumbled"
+        },
+        {
+          "quantity": "2 cloves garlic",
+          "ingredient": "minced"
+        },
+        {
+          "quantity": "½ teaspoon black pepper",
+          "ingredient": ""
+        },
+        {
+          "quantity": "2 tablespoons chopped green onions (optional garnish)",
+          "ingredient": ""
+        }
+      ],
+      "overview": {
+        "header": "About Best Crack Chicken Crock Pot Recipe – Easy Creamy Slow Cooker Dinner",
+        "paragraph": "Crack Chicken Crock Pot is a creamy, cheesy, and incredibly flavorful slow cooker recipe that has become a favorite comfort food for many families. Made with tender shredded chicken, rich cream cheese, savory ranch seasoning, crispy bacon, and melted cheddar cheese, this dish delivers a perfect balance of flavors in every bite.\n\nThe best part about this recipe is how easy it is to prepare. Simply place the ingredients in the crock pot and let the slow cooker do the work. After a few hours, the chicken becomes tender and coated in a creamy ranch sauce that pairs perfectly with rice, pasta, sandwiches, or baked potatoes.\n\nThis simple dump-and-go slow cooker recipe is ideal for busy weeknights, meal prep, or family dinners."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\n\nPlace the chicken breasts in the bottom of the crock pot.\n\nStep 2\n\nSprinkle the ranch seasoning, garlic, and black pepper over the chicken.\n\nStep 3\n\nPour the chicken broth around the chicken.\n\nStep 4\n\nAdd the cream cheese on top without stirring.\n\nStep 5\n\nCover and cook on LOW for 6 hours or HIGH for 4 hours.\n\nStep 6\n\nOnce cooked, shred the chicken using two forks.\n\nStep 7\n\nStir the shredded chicken with the cream cheese until a creamy sauce forms.\n\nStep 8\n\nAdd shredded cheddar cheese and crumbled bacon, then mix well.\n\nStep 9\n\nGarnish with chopped green onions and serve warm."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Use block cream cheese for the best creamy texture.\n\n✔ Cook bacon separately for extra crispiness before adding it to the crock pot.\n\n✔ For a thicker sauce, leave the lid slightly open for the last 10–15 minutes.\n\n✔ Add spinach or mushrooms to increase the nutrition of the dish.\n\n✔ This recipe tastes great served in sandwich buns, tortillas, or lettuce wraps."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Can I use chicken thighs instead of chicken breasts?\nYes, chicken thighs work very well and make the recipe even more tender and flavorful.\n\n2. Can I freeze Crack Chicken?\nYes. Store it in an airtight container and freeze for up to 2 months.\n\n3. How do I store leftovers?\nKeep leftovers in the refrigerator for up to 4 days in a sealed container.\n\n4. What can I serve with Crack Chicken?\nIt pairs well with rice, pasta, mashed potatoes, roasted vegetables, or sandwich buns.\n\n5. Is this recipe keto friendly?\nYes, it can be keto if served without bread or high-carb sides."
+      },
+      "more": {
+        "header": "More Like Best Crack Chicken Crock Pot Recipe – Easy Creamy Slow Cooker Dinner",
+        "recipes": [
+          {
+            "title": "Cream Cheese Chicken Crock Pot – Easy & Ultra Creamy Slow Cooker Recipe",
+            "url": "/recipes/cream-cheese-chicken-crock-pot-easy-ultra-creamy-slow-cooker-recipe/"
+          },
+          {
+            "title": "Creamy Tuscan Garlic Chicken",
+            "url": "/recipes/creamy-tuscan-garlic-chicken"
+          }
+        ]
+      }
+    },
+    "tags": [
+      "crack chicken",
+      "crock pot chicken",
+      "slow cooker chicken",
+      "creamy chicken recipe",
+      "bacon ranch chicken",
+      "easy dinner recipe",
+      "comfort food",
+      "crock pot dinner",
+      "family meal",
+      "easy slow cooker recipe"
+    ],
+    "links": []
   }
 ];
