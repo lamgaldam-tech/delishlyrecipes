@@ -37,10 +37,10 @@ async function add(recipe: Recipe) {
   return recipe;
 }
 
-async function update(recipe: Recipe) {
+async function update(slug: string, recipe: Recipe) {
   const recipes = await load();
 
-  const index = recipes.findIndex((r) => r.slug === recipe.slug);
+  const index = recipes.findIndex((r) => r.slug === slug);
   if (index === -1) throw new Error("Recipe not found");
 
   recipes[index] = recipe;

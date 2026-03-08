@@ -10,9 +10,9 @@ async function add(slug: string, file: File) {
   await fs.writeFile(filePath, buffer);
 }
 
-async function update(slug: string, file: File) {
-  await deleteImage(slug);
-  return add(slug, file);
+async function update(oldSlug: string, newSlug: string, file: File) {
+  await deleteImage(oldSlug);
+  return add(newSlug, file);
 }
 
 async function deleteImage(slug: string) {
