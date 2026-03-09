@@ -28,7 +28,7 @@ export const Home = ({ recipes }: HomeProps) => {
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/hero-image.jpg"
+            src="/hero-image.webp"
             alt="Fresh ingredients"
             className="w-full h-full object-cover"
           />
