@@ -16,11 +16,9 @@ export const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <a href="/" className="flex items-center gap-2">
           <img
-            src="/icon.jpg"
+            src="/favicon-48x48.webp"
             alt="Delishly Recipes"
             title="Delishly Recipes"
-            width="48"
-            height="48"
             className="text-2xl rounded-full"
           />
           <span className="font-display text-xl font-bold text-foreground tracking-tight">
