@@ -69,8 +69,8 @@ export const Footer = () => (
             {[
               { label: "About", to: "/about/" },
               { label: "Contact", to: "/contact/" },
-              { label: "Privacy Policy", to: "/" },
-              { label: "Terms of Service", to: "/" },
+              { label: "Privacy Policy", to: "/privacy-policy/" },
+              { label: "Terms of Service", to: "/terms-of-service/" },
             ].map((item) => (
               <li key={item.label}>
                 <a
