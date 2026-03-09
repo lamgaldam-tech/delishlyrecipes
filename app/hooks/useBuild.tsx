@@ -7,6 +7,8 @@ import { Footer } from "@/components/Footer";
 import { Home } from "@/views/Home";
 import { About } from "@/views/About";
 import { Contact } from "@/views/Contact";
+import { PrivacyPolicy } from "@/views/PrivacyPolicy";
+import { TermsOfService } from "@/views/TermsOfService";
 import { Recipes } from "@/views/Recipes";
 import { RecipePage } from "@/views/Recipe";
 import { SubRecipes } from "@/views/SubRecipes";
@@ -148,6 +150,26 @@ const mainPages = (recipes: Recipe[]): Page[] => [
       "/contact/",
     ),
     body: body(<Contact />),
+  },
+  {
+    html: "privacy-policy/index.html",
+    script: "../src/PrivacyPolicyMain.tsx",
+    header: header(
+      "Privacy Policy – Delishly Recipes",
+      "Read Delishly Recipes' privacy policy to understand how we collect, use, and protect your personal information when using our website and services.",
+      "/privacy-policy/",
+    ),
+    body: body(<PrivacyPolicy />),
+  },
+  {
+    html: "terms-of-service/index.html",
+    script: "../src/TermsOfServiceMain.tsx",
+    header: header(
+      "Terms of Service – Delishly Recipes",
+      "Review the terms of service for Delishly Recipes. Learn about your rights, responsibilities, and the rules for using our website and services safely and responsibly.",
+      "/terms-of-service/",
+    ),
+    body: body(<TermsOfService />),
   },
   {
     html: "recipes/index.html",
