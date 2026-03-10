@@ -43,7 +43,10 @@ const header = (
       publisher: {
         "@type": "Organization",
         name: "Delishly Recipes",
-        logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon-1120x1120.png` },
+        logo: {
+          "@type": "ImageObject",
+          url: `${BASE_URL}/favicon-1120x1120.png`,
+        },
       },
       recipeIngredient: recipe.sections.ingerdiants.map(
         (i) => `${i.quantity} ${i.ingredient}`,
@@ -85,7 +88,10 @@ const header = (
       publisher: {
         "@type": "Organization",
         name: "Delishly Recipes",
-        logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon-1120x1120.png` },
+        logo: {
+          "@type": "ImageObject",
+          url: `${BASE_URL}/favicon-1120x1120.png`,
+        },
       },
     };
   }
@@ -253,7 +259,10 @@ export function useBuild() {
   const deploy = searchParams.get("deploy");
 
   async function build(recipes: Recipe[], redirect: string = "/") {
-    const tags = Array.from(new Set(recipes.flatMap((r) => r.tags)));
+    const tags = Array.from(
+      new Map(recipes.flatMap((r) => r.tags).map((t) => [t.tag, t])).values(),
+    );
+
     const pages = [
       ...mainPages(recipes),
       ...recipePages(recipes, tags),
