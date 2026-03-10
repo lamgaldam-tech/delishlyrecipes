@@ -25,7 +25,7 @@ const header = (
   url: string,
   pageType: "normal" | "list" | "recipe" = "normal",
   itemList?: Recipe[],
-  image: string = `${BASE_URL}/icon.jpg`,
+  image: string = `${BASE_URL}/favicon-1120x1120.png`,
   recipe?: Recipe,
 ) => {
   const ogType = pageType === "recipe" ? "article" : "website";
@@ -43,7 +43,7 @@ const header = (
       publisher: {
         "@type": "Organization",
         name: "Delishly Recipes",
-        logo: { "@type": "ImageObject", url: `${BASE_URL}/icon.jpg` },
+        logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon-1120x1120.png` },
       },
       recipeIngredient: recipe.sections.ingerdiants.map(
         (i) => `${i.quantity} ${i.ingredient}`,
@@ -85,7 +85,7 @@ const header = (
       publisher: {
         "@type": "Organization",
         name: "Delishly Recipes",
-        logo: { "@type": "ImageObject", url: `${BASE_URL}/icon.jpg` },
+        logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon-1120x1120.png` },
       },
     };
   }
@@ -95,7 +95,8 @@ const header = (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${description}">
     <title>${title}</title>
-    <link rel="icon" href="/icon.jpg" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256x256.png">
     <link rel="canonical" href="${BASE_URL}${url}" />
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${description}" />
