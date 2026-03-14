@@ -907,5 +907,138 @@ export const recipes: Recipe[] = [
         "url": "/recipes/tags/homemade-chicken-salad/"
       }
     ]
+  },
+  {
+    "title": "Best Canned Chicken Salad Recipe – Quick, Easy & Perfect for Sandwiches",
+    "slug": "best-canned-chicken-salad-recipe-quick-easy-perfect-for-sandwiches",
+    "url": "/recipes/best-canned-chicken-salad-recipe-quick-easy-perfect-for-sandwiches/",
+    "image": "/images/best-canned-chicken-salad-recipe-quick-easy-perfect-for-sandwiches.png",
+    "category": {
+      "name": "Lunch",
+      "emoji": "🥗",
+      "url": "/recipes/categories/lunch/"
+    },
+    "description": "Canned Chicken Salad is a quick, simple, and budget-friendly recipe that comes together in just minutes. Made with tender canned chicken, crunchy vegetables, and a creamy dressing, this easy salad is perfect for busy days when you need a fast and satisfying meal.\n\nWith minimal preparation and pantry-friendly ingredients, this recipe is ideal for quick lunches, light dinners, or meal prep. The combination of savory chicken, crisp celery, and a creamy dressing creates a delicious balance of flavor and texture.\n\nServe this Canned Chicken Salad in sandwiches, wraps, lettuce cups, or with crackers for a versatile and tasty dish that’s both convenient and satisfying. 🥗",
+    "sections": {
+      "details": {
+        "prep": 10,
+        "cook": 0,
+        "servings": 4,
+        "calories": 280
+      },
+      "ingerdiants": [
+        {
+          "quantity": "2 cans (12.5 oz / 354 g each) canned chicken",
+          "ingredient": "drained"
+        },
+        {
+          "quantity": "½ cup mayonnaise",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 celery stalk",
+          "ingredient": "finely chopped"
+        },
+        {
+          "quantity": "¼ cup red onion",
+          "ingredient": "finely chopped"
+        },
+        {
+          "quantity": "1 tablespoon lemon juice",
+          "ingredient": ""
+        },
+        {
+          "quantity": "½ teaspoon salt",
+          "ingredient": ""
+        },
+        {
+          "quantity": "¼ teaspoon black pepper",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tablespoon fresh parsley",
+          "ingredient": "chopped (optional)"
+        },
+        {
+          "quantity": "¼ cup chopped grapes or apples (optional for sweetness)",
+          "ingredient": ""
+        }
+      ],
+      "overview": {
+        "header": "About Best Canned Chicken Salad Recipe – Quick, Easy & Perfect for Sandwiches",
+        "paragraph": "Canned Chicken Salad is a quick, easy, and budget-friendly meal that comes together in just minutes. Using canned chicken saves time while still providing a high-protein, flavorful dish. The creamy dressing combined with crisp vegetables creates a satisfying texture perfect for sandwiches, wraps, lettuce cups, or as a standalone salad.\n\nThis recipe is ideal for busy weekdays, meal prep, or casual gatherings. It’s versatile, flavorful, and can be customized with your favorite add-ins like nuts, fruits, or fresh herbs."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\n\nPlace the drained canned chicken in a mixing bowl.\n\nStep 2\n\nAdd chopped celery, red onion, and optional grapes or apples.\n\nStep 3\n\nIn a small bowl, mix mayonnaise, lemon juice, salt, and black pepper.\n\nStep 4\n\nPour the dressing over the chicken mixture.\n\nStep 5\n\nGently stir until all ingredients are evenly coated.\n\nStep 6\n\nTaste and adjust seasoning if needed.\n\nStep 7\n\nOptional: Chill in the refrigerator for 20–30 minutes before serving.\n\nStep 8\n\nServe in sandwiches, wraps, lettuce cups, or with crackers."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Use white canned chicken for a mild flavor.\n\n✔ Chill before serving for the best taste.\n\n✔ Add toasted nuts like almonds or walnuts for extra crunch.\n\n✔ Replace mayonnaise with Greek yogurt for a lighter version.\n\n✔ Customize with diced apples, grapes, or dried cranberries for a touch of sweetness."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Can I make this salad ahead of time?\nYes, it can be stored in the refrigerator for up to 3 days in an airtight container.\n\n2. Can I freeze canned chicken salad?\nFreezing is not recommended, as the mayonnaise can separate when thawed.\n\n3. What can I serve with this salad?\nSandwich bread, wraps, crackers, or fresh greens work great.\n\n4. Can I make it healthier?\nYes, substitute Greek yogurt for mayonnaise or reduce the amount of dressing.\n\n5. Can I add vegetables or fruits?\nAbsolutely! Try adding diced apples, grapes, cucumbers, or bell peppers."
+      },
+      "more": {
+        "header": "More Like Best Canned Chicken Salad Recipe – Quick, Easy & Perfect for Sandwiches",
+        "recipes": [
+          {
+            "title": "Creamy Tuscan Garlic Chicken",
+            "url": "/recipes/creamy-tuscan-garlic-chicken/"
+          },
+          {
+            "title": "Cream Cheese Chicken Crock Pot – Easy & Ultra Creamy Slow Cooker Recipe",
+            "url": "/recipes/cream-cheese-chicken-crock-pot-easy-ultra-creamy-slow-cooker-recipe/"
+          },
+          {
+            "title": "Best Easy Chicken Salad Recipe – Quick, Creamy & Perfect for Lunch",
+            "url": "/recipes/best-easy-chicken-salad-recipe-quick-creamy-perfect-for-lunch/"
+          }
+        ]
+      }
+    },
+    "tags": [
+      {
+        "tag": "canned chicken salad",
+        "url": "/recipes/tags/canned-chicken-salad/"
+      },
+      {
+        "tag": "easy chicken salad",
+        "url": "/recipes/tags/easy-chicken-salad/"
+      },
+      {
+        "tag": "quick lunch recipe",
+        "url": "/recipes/tags/quick-lunch-recipe/"
+      },
+      {
+        "tag": "chicken salad sandwich",
+        "url": "/recipes/tags/chicken-salad-sandwich/"
+      },
+      {
+        "tag": "healthy chicken salad",
+        "url": "/recipes/tags/healthy-chicken-salad/"
+      },
+      {
+        "tag": "creamy chicken salad",
+        "url": "/recipes/tags/creamy-chicken-salad/"
+      },
+      {
+        "tag": "high protein salad",
+        "url": "/recipes/tags/high-protein-salad/"
+      },
+      {
+        "tag": "budget-friendly recipe",
+        "url": "/recipes/tags/budget-friendly-recipe/"
+      },
+      {
+        "tag": "meal prep salad",
+        "url": "/recipes/tags/meal-prep-salad/"
+      },
+      {
+        "tag": "no-cook salad",
+        "url": "/recipes/tags/no-cook-salad/"
+      }
+    ]
   }
 ];
