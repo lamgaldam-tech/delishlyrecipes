@@ -778,5 +778,134 @@ export const recipes: Recipe[] = [
         "url": "/recipes/tags/easy/"
       }
     ]
+  },
+  {
+    "title": "Best Easy Chicken Salad Recipe – Quick, Creamy & Perfect for Lunch",
+    "slug": "best-easy-chicken-salad-recipe-quick-creamy-perfect-for-lunch",
+    "url": "/recipes/best-easy-chicken-salad-recipe-quick-creamy-perfect-for-lunch/",
+    "image": "/images/best-easy-chicken-salad-recipe-quick-creamy-perfect-for-lunch.png",
+    "category": {
+      "name": "Lunch",
+      "emoji": "🥗",
+      "url": "/recipes/categories/lunch/"
+    },
+    "description": "Easy Chicken Salad Recipe is a fresh, creamy, and flavorful dish that comes together in just minutes with simple ingredients. Made with tender cooked chicken, crisp vegetables, and a creamy dressing, this classic salad is perfect for quick lunches, light dinners, or meal prep.\n\nThis recipe is incredibly versatile and can be served in sandwiches, wraps, lettuce cups, or over a bed of fresh greens. The combination of juicy chicken, crunchy celery, and a smooth, savory dressing creates a satisfying balance of texture and flavor.\n\nWhether you need a quick meal for busy days or a refreshing dish for gatherings and picnics, this Easy Chicken Salad Recipe is a simple and delicious option that everyone will enjoy. 🥗",
+    "sections": {
+      "details": {
+        "prep": 15,
+        "cook": 0,
+        "servings": 4,
+        "calories": 320
+      },
+      "ingerdiants": [
+        {
+          "quantity": "2 cups cooked chicken breast",
+          "ingredient": "shredded or diced"
+        },
+        {
+          "quantity": "½ cup mayonnaise",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 celery stalk",
+          "ingredient": "finely chopped"
+        },
+        {
+          "quantity": "¼ cup red onion",
+          "ingredient": "finely chopped"
+        },
+        {
+          "quantity": "1 tablespoon lemon juice",
+          "ingredient": ""
+        },
+        {
+          "quantity": "½ teaspoon salt",
+          "ingredient": ""
+        },
+        {
+          "quantity": "¼ teaspoon black pepper",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tablespoon fresh parsley",
+          "ingredient": "chopped (optional)"
+        },
+        {
+          "quantity": "¼ cup grapes or chopped apples (optional for sweetness)",
+          "ingredient": ""
+        }
+      ],
+      "overview": {
+        "header": "About Best Easy Chicken Salad Recipe – Quick, Creamy & Perfect for Lunch",
+        "paragraph": "Easy Chicken Salad Recipe is a simple, fresh, and delicious dish that can be prepared in just minutes. Made with tender cooked chicken, crunchy celery, and a creamy dressing, this classic salad is perfect for quick lunches, light dinners, or meal prep.\n\nThe combination of juicy chicken and flavorful dressing creates a satisfying texture and taste. It can be served in sandwiches, wraps, lettuce cups, or on top of fresh greens, making it a versatile meal for any occasion.\n\nThis recipe is perfect for using leftover chicken and is ideal for busy days when you need a quick and nutritious meal."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\n\nPlace the cooked chicken in a large mixing bowl.\n\nStep 2\n\nAdd chopped celery, red onion, and optional grapes or apples.\n\nStep 3\n\nIn a small bowl, mix mayonnaise, lemon juice, salt, and black pepper.\n\nStep 4\n\nPour the dressing over the chicken mixture.\n\nStep 5\n\nGently stir until everything is evenly coated.\n\nStep 6\n\nTaste and adjust seasoning if needed.\n\nStep 7\n\nGarnish with fresh parsley and serve immediately or refrigerate for 30 minutes for better flavor."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Use rotisserie chicken for extra flavor and convenience.\n\n✔ Chill the salad for 30 minutes before serving to enhance the taste.\n\n✔ Add nuts like almonds or walnuts for extra crunch.\n\n✔ Replace mayonnaise with Greek yogurt for a lighter version.\n\n✔ Serve in lettuce wraps or whole-grain bread for a healthier meal."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Can I make chicken salad ahead of time?\nYes, it can be stored in the refrigerator for up to 3 days in an airtight container.\n\n2. Can I freeze chicken salad?\nFreezing is not recommended because mayonnaise can separate when thawed.\n\n3. What chicken works best for this recipe?\nCooked chicken breast, rotisserie chicken, or leftover roasted chicken all work well.\n\n4. What can I serve with chicken salad?\nSandwich bread, crackers, lettuce cups, wraps, or fresh salad greens.\n\n5. How can I make this recipe healthier?\nUse Greek yogurt instead of mayonnaise and add more vegetables."
+      },
+      "more": {
+        "header": "More Like Best Easy Chicken Salad Recipe – Quick, Creamy & Perfect for Lunch",
+        "recipes": [
+          {
+            "title": "Creamy Tuscan Garlic Chicken",
+            "url": "/recipes/creamy-tuscan-garlic-chicken/"
+          },
+          {
+            "title": "Cream Cheese Chicken Crock Pot – Easy & Ultra Creamy Slow Cooker Recipe",
+            "url": "/recipes/cream-cheese-chicken-crock-pot-easy-ultra-creamy-slow-cooker-recipe/"
+          }
+        ]
+      }
+    },
+    "tags": [
+      {
+        "tag": "easy chicken salad",
+        "url": "/recipes/tags/easy-chicken-salad/"
+      },
+      {
+        "tag": "chicken salad recipe",
+        "url": "/recipes/tags/chicken-salad-recipe/"
+      },
+      {
+        "tag": "healthy chicken salad",
+        "url": "/recipes/tags/healthy-chicken-salad/"
+      },
+      {
+        "tag": "quick lunch recipe",
+        "url": "/recipes/tags/quick-lunch-recipe/"
+      },
+      {
+        "tag": "chicken salad sandwich",
+        "url": "/recipes/tags/chicken-salad-sandwich/"
+      },
+      {
+        "tag": "creamy chicken salad",
+        "url": "/recipes/tags/creamy-chicken-salad/"
+      },
+      {
+        "tag": "high protein salad",
+        "url": "/recipes/tags/high-protein-salad/"
+      },
+      {
+        "tag": "easy salad recipe",
+        "url": "/recipes/tags/easy-salad-recipe/"
+      },
+      {
+        "tag": "lunch ideas",
+        "url": "/recipes/tags/lunch-ideas/"
+      },
+      {
+        "tag": "homemade chicken salad",
+        "url": "/recipes/tags/homemade-chicken-salad/"
+      }
+    ]
   }
 ];
