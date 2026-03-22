@@ -116,6 +116,7 @@ const header = (
     <script type="application/ld+json">
     ${JSON.stringify(jsonLD, null, 2)}
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9435048016231082" crossorigin="anonymous"></script>
   `;
 };
 
