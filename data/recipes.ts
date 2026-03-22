@@ -778,5 +778,133 @@ export const recipes: Recipe[] = [
         "url": "/recipes/tags/easy/"
       }
     ]
+  },
+  {
+    "title": "Best Chicken Crust Pizza Recipe – Low Carb, Keto & High Protein",
+    "slug": "best-chicken-crust-pizza-recipe-low-carb-keto-high-protein",
+    "url": "/recipes/best-chicken-crust-pizza-recipe-low-carb-keto-high-protein/",
+    "image": "/images/best-chicken-crust-pizza-recipe-low-carb-keto-high-protein.png",
+    "category": {
+      "name": "Dinner",
+      "emoji": "🍝",
+      "url": "/recipes/categories/dinner/"
+    },
+    "description": "Chicken Crust Pizza is a healthy, low-carb alternative to traditional pizza that’s packed with flavor and protein. Made with a crispy chicken-based crust instead of regular dough, this recipe is perfect for those following a keto or gluten-free lifestyle while still enjoying their favorite comfort food.\n\nThe crust is created by combining ground chicken with cheese and seasonings, then baking it until golden and firm. Once topped with rich pizza sauce, melted cheese, and your favorite toppings, it transforms into a delicious, satisfying pizza with a perfectly cheesy and savory bite.\n\nIdeal for quick weeknight dinners, meal prep, or a guilt-free indulgence, Chicken Crust Pizza is a simple, nutritious, and flavorful way to enjoy pizza without the carbs. 🍕",
+    "sections": {
+      "details": {
+        "prep": 15,
+        "cook": 25,
+        "servings": 4,
+        "calories": 350
+      },
+      "ingerdiants": [
+        {
+          "quantity": "2 cups ground chicken",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 cup shredded mozzarella cheese",
+          "ingredient": ""
+        },
+        {
+          "quantity": "¼ cup grated Parmesan cheese",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 egg",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp garlic powder",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp Italian seasoning",
+          "ingredient": ""
+        },
+        {
+          "quantity": "Salt & pepper to taste",
+          "ingredient": ""
+        },
+        {
+          "quantity": "Toppings:",
+          "ingredient": ""
+        },
+        {
+          "quantity": "½ cup pizza sauce",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 cup shredded mozzarella cheese",
+          "ingredient": ""
+        },
+        {
+          "quantity": "Pepperoni",
+          "ingredient": "mushrooms"
+        }
+      ],
+      "overview": {
+        "header": "About Best Chicken Crust Pizza Recipe – Low Carb, Keto & High Protein",
+        "paragraph": "Chicken Crust Pizza is a healthy and delicious alternative to traditional pizza, using a protein-rich chicken crust instead of regular dough. This low-carb and gluten-free recipe is perfect for those following keto or high-protein diets while still enjoying a classic comfort food.\n\nThe crust is made by mixing ground chicken with cheese and seasonings, then baking it until firm and slightly crispy. Once topped with sauce, cheese, and your favorite toppings, it becomes a flavorful and satisfying meal that’s both nutritious and easy to prepare."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\nPreheat oven to 200°C (400°F) and line a baking sheet with parchment paper.\n\nStep 2\nIn a bowl, combine ground chicken, mozzarella, Parmesan, egg, garlic powder, Italian seasoning, salt, and pepper.\n\nStep 3\nSpread the mixture into a thin, even crust on the prepared baking sheet.\n\nStep 4\nBake for 15–20 minutes until the crust is firm and lightly golden.\n\nStep 5\nRemove from oven and add pizza sauce, cheese, and toppings.\n\nStep 6\nReturn to oven and bake for another 8–10 minutes until cheese is melted and bubbly.\n\nStep 7\nLet cool slightly, slice, and serve."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Spread the crust thinly for a crispier texture.\n\n✔ Use parchment paper to prevent sticking.\n\n✔ Pre-bake the crust fully before adding toppings.\n\n✔ Drain excess moisture from the chicken to avoid a soggy crust.\n\n✔ Add herbs or spices to customize flavor."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Is chicken crust pizza really low carb?\nYes, it replaces traditional dough, making it low in carbs and high in protein.\n\n2. Can I make it ahead of time?\nYes, you can pre-bake the crust and store it in the fridge.\n\n3. Can I freeze chicken crust pizza?\nYes, freeze the crust or the fully assembled pizza.\n\n4. Why is my crust soggy?\nIt may be too thick or not baked long enough before adding toppings.\n\n5. What toppings work best?\nCheese, pepperoni, mushrooms, peppers, and olives all work great."
+      },
+      "more": {
+        "header": "More Like Best Chicken Crust Pizza Recipe – Low Carb, Keto & High Protein",
+        "recipes": []
+      }
+    },
+    "tags": [
+      {
+        "tag": "chicken crust pizza",
+        "url": "/recipes/tags/chicken-crust-pizza/"
+      },
+      {
+        "tag": "keto pizza",
+        "url": "/recipes/tags/keto-pizza/"
+      },
+      {
+        "tag": "low carb pizza",
+        "url": "/recipes/tags/low-carb-pizza/"
+      },
+      {
+        "tag": "gluten-free pizza",
+        "url": "/recipes/tags/gluten-free-pizza/"
+      },
+      {
+        "tag": "healthy pizza recipe",
+        "url": "/recipes/tags/healthy-pizza-recipe/"
+      },
+      {
+        "tag": "high protein meal",
+        "url": "/recipes/tags/high-protein-meal/"
+      },
+      {
+        "tag": "easy dinner recipe",
+        "url": "/recipes/tags/easy-dinner-recipe/"
+      },
+      {
+        "tag": "keto dinner",
+        "url": "/recipes/tags/keto-dinner/"
+      },
+      {
+        "tag": "homemade pizza",
+        "url": "/recipes/tags/homemade-pizza/"
+      },
+      {
+        "tag": "low carb recipes",
+        "url": "/recipes/tags/low-carb-recipes/"
+      }
+    ]
   }
 ];
