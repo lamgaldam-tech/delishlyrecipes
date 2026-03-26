@@ -1034,5 +1034,134 @@ export const recipes: Recipe[] = [
         "url": "/recipes/tags/budget-friendly-recipes/"
       }
     ]
+  },
+  {
+    "title": "Best Keto Recipes with Ground Beef – Easy, Low Carb & High Protein Meals",
+    "slug": "best-keto-recipes-with-ground-beef-easy-low-carb-high-protein-meals",
+    "url": "/recipes/best-keto-recipes-with-ground-beef-easy-low-carb-high-protein-meals/",
+    "image": "/images/best-keto-recipes-with-ground-beef-easy-low-carb-high-protein-meals.png",
+    "category": {
+      "name": "Dinner",
+      "emoji": "🍝",
+      "url": "/recipes/categories/dinner/"
+    },
+    "description": "Keto Recipes with Ground Beef are a collection of easy, low-carb meals that are perfect for anyone following a ketogenic lifestyle. Made with protein-rich ground beef and simple ingredients, these recipes are designed to be both satisfying and full of flavor while keeping carbs low.\n\nFrom skillet dinners and casseroles to quick one-pan meals, ground beef is a versatile ingredient that makes keto cooking simple and budget-friendly. These dishes are rich, hearty, and ideal for busy weeknights, meal prep, or family dinners.\n\nWhether you’re looking for quick dinner ideas or comforting low-carb meals, Keto Recipes with Ground Beef offer delicious, high-protein options that help you stay on track without sacrificing taste. 🥩",
+    "sections": {
+      "details": {
+        "prep": 10,
+        "cook": 25,
+        "servings": 4,
+        "calories": 420
+      },
+      "ingerdiants": [
+        {
+          "quantity": "1 lb ground beef",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 cup cauliflower rice",
+          "ingredient": ""
+        },
+        {
+          "quantity": "½ cup shredded cheddar cheese",
+          "ingredient": ""
+        },
+        {
+          "quantity": "½ cup heavy cream",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 small onion",
+          "ingredient": "chopped"
+        },
+        {
+          "quantity": "2 cloves garlic",
+          "ingredient": "minced"
+        },
+        {
+          "quantity": "1 tbsp olive oil",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp paprika",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp Italian seasoning",
+          "ingredient": ""
+        },
+        {
+          "quantity": "Salt & pepper to taste",
+          "ingredient": ""
+        }
+      ],
+      "overview": {
+        "header": "About Best Keto Recipes with Ground Beef – Easy, Low Carb & High Protein Meals",
+        "paragraph": "Keto Recipes with Ground Beef are simple, hearty, and packed with flavor while keeping carbs low. This easy skillet version combines seasoned ground beef with creamy sauce, cheese, and cauliflower rice to create a satisfying and nutritious meal.\n\nIt’s perfect for busy weeknights or meal prep, offering a high-protein, low-carb option that doesn’t sacrifice taste. The creamy texture and rich flavors make it a comforting dish that fits perfectly into a keto lifestyle."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\nHeat olive oil in a skillet over medium heat.\n\nStep 2\nAdd chopped onion and garlic, sauté until soft.\n\nStep 3\nAdd ground beef and cook until browned. Drain excess fat if needed.\n\nStep 4\nStir in paprika, Italian seasoning, salt, and pepper.\n\nStep 5\nAdd cauliflower rice and cook for 3–5 minutes.\n\nStep 6\nPour in heavy cream and stir well.\n\nStep 7\nAdd shredded cheese and mix until melted and creamy.\n\nStep 8\nSimmer for a few minutes, then serve hot."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Use full-fat ingredients for best keto results.\n\n✔ Don’t overcook cauliflower rice to keep texture light.\n\n✔ Add spinach or mushrooms for extra nutrients.\n\n✔ Use ground turkey as a lean alternative if desired.\n\n✔ Adjust seasoning to taste for more flavor."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Is ground beef good for keto?\nYes, it’s high in protein and fats, making it perfect for keto diets.\n\n2. Can I meal prep this recipe?\nYes, store in the fridge for up to 3–4 days.\n\n3. Can I freeze it?\nYes, freeze in airtight containers for up to 2 months.\n\n4. What can I use instead of cauliflower rice?\nYou can use zucchini noodles or serve it alone.\n\n5. How do I make it spicier?\nAdd chili flakes or hot sauce."
+      },
+      "more": {
+        "header": "More Like Best Keto Recipes with Ground Beef – Easy, Low Carb & High Protein Meals",
+        "recipes": [
+          {
+            "title": "Best Sirloin Tip Recipes – Easy, Tender & Flavorful Beef Dinners",
+            "url": "/recipes/best-sirloin-tip-recipes-easy-tender-flavorful-beef-dinners/"
+          }
+        ]
+      }
+    },
+    "tags": [
+      {
+        "tag": "keto recipes with ground beef",
+        "url": "/recipes/tags/keto-recipes-with-ground-beef/"
+      },
+      {
+        "tag": "low carb recipes",
+        "url": "/recipes/tags/low-carb-recipes/"
+      },
+      {
+        "tag": "keto dinner ideas",
+        "url": "/recipes/tags/keto-dinner-ideas/"
+      },
+      {
+        "tag": "ground beef recipes",
+        "url": "/recipes/tags/ground-beef-recipes/"
+      },
+      {
+        "tag": "high protein meals",
+        "url": "/recipes/tags/high-protein-meals/"
+      },
+      {
+        "tag": "easy keto meals",
+        "url": "/recipes/tags/easy-keto-meals/"
+      },
+      {
+        "tag": "keto skillet",
+        "url": "/recipes/tags/keto-skillet/"
+      },
+      {
+        "tag": "low carb dinner",
+        "url": "/recipes/tags/low-carb-dinner/"
+      },
+      {
+        "tag": "healthy keto recipes",
+        "url": "/recipes/tags/healthy-keto-recipes/"
+      },
+      {
+        "tag": "quick keto meals",
+        "url": "/recipes/tags/quick-keto-meals/"
+      }
+    ]
   }
 ];
