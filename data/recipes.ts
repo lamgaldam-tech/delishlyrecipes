@@ -906,5 +906,133 @@ export const recipes: Recipe[] = [
         "url": "/recipes/tags/low-carb-recipes/"
       }
     ]
+  },
+  {
+    "title": "Best Sirloin Tip Recipes – Easy, Tender & Flavorful Beef Dinners",
+    "slug": "best-sirloin-tip-recipes-easy-tender-flavorful-beef-dinners",
+    "url": "/recipes/best-sirloin-tip-recipes-easy-tender-flavorful-beef-dinners/",
+    "image": "/images/best-sirloin-tip-recipes-easy-tender-flavorful-beef-dinners.png",
+    "category": {
+      "name": "Dinner",
+      "emoji": "🍝",
+      "url": "/recipes/categories/dinner/"
+    },
+    "description": "Sirloin Tip Recipes are a collection of hearty, flavorful dishes made using tender and budget-friendly cuts of beef. Known for their rich taste and versatility, sirloin tips can be cooked in a variety of ways including slow cooking, stovetop simmering, or oven baking to achieve perfectly tender results.\n\nThese recipes are ideal for family dinners, meal prep, or comforting weeknight meals. Whether served with gravy, vegetables, rice, or mashed potatoes, sirloin tip dishes deliver a satisfying and filling experience in every bite.\n\nEasy to prepare and packed with protein, Sirloin Tip Recipes are perfect for anyone looking for delicious, homestyle meals that are both affordable and full of flavor. 🥩",
+    "sections": {
+      "details": {
+        "prep": 15,
+        "cook": 45,
+        "servings": 4,
+        "calories": 480
+      },
+      "ingerdiants": [
+        {
+          "quantity": "1½ lbs sirloin tip steak",
+          "ingredient": "cut into bite-sized pieces"
+        },
+        {
+          "quantity": "2 tbsp olive oil",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 small onion",
+          "ingredient": "chopped"
+        },
+        {
+          "quantity": "2 cloves garlic",
+          "ingredient": "minced"
+        },
+        {
+          "quantity": "2 cups beef broth",
+          "ingredient": ""
+        },
+        {
+          "quantity": "2 tbsp Worcestershire sauce",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tbsp soy sauce",
+          "ingredient": ""
+        },
+        {
+          "quantity": "2 tbsp all-purpose flour",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp onion powder",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp garlic powder",
+          "ingredient": ""
+        },
+        {
+          "quantity": "Salt & pepper to taste",
+          "ingredient": ""
+        }
+      ],
+      "overview": {
+        "header": "About Best Sirloin Tip Recipes – Easy, Tender & Flavorful Beef Dinners",
+        "paragraph": "Sirloin Tip Recipes are a great way to enjoy tender, flavorful beef in a simple and satisfying way. This version features sirloin tips simmered in a rich, savory gravy until perfectly tender. The result is a comforting, hearty dish that’s full of deep flavor.\n\nPerfect for family dinners or meal prep, this dish pairs beautifully with mashed potatoes, rice, or noodles. It’s easy to make, budget-friendly, and delivers restaurant-quality taste at home."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\nHeat olive oil in a large skillet or pot over medium heat.\n\nStep 2\nAdd sirloin tips and sear until browned on all sides. Remove and set aside.\n\nStep 3\nIn the same pan, sauté onion and garlic until soft and fragrant.\n\nStep 4\nReturn beef to the pan and add beef broth, Worcestershire sauce, and soy sauce.\n\nStep 5\nSeason with onion powder, garlic powder, salt, and pepper.\n\nStep 6\nCover and simmer on low heat for 30–40 minutes until beef is tender.\n\nStep 7\nMix flour with a little water to form a slurry and stir into the gravy.\n\nStep 8\nCook until the gravy thickens.\n\nStep 9\nServe hot over mashed potatoes, rice, or noodles."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Use low heat and slow cooking for the most tender beef.\n\n✔ Sear the meat well to enhance flavor.\n\n✔ Add mushrooms for extra richness.\n\n✔ Adjust gravy thickness by controlling the slurry amount.\n\n✔ Let the dish rest a few minutes before serving for better flavor."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. What is the best way to cook sirloin tips?\nSlow simmering or slow cooking helps make them tender and flavorful.\n\n2. Can I use a slow cooker?\nYes, cook on low for 6–8 hours or high for 3–4 hours.\n\n3. Can I freeze this recipe?\nYes, store in an airtight container for up to 2 months.\n\n4. Why are my sirloin tips tough?\nThey may need more cooking time to become tender.\n\n5. What sides go best with sirloin tips?\nMashed potatoes, rice, egg noodles, or steamed vegetables."
+      },
+      "more": {
+        "header": "More Like Best Sirloin Tip Recipes – Easy, Tender & Flavorful Beef Dinners",
+        "recipes": []
+      }
+    },
+    "tags": [
+      {
+        "tag": "sirloin tip recipes",
+        "url": "/recipes/tags/sirloin-tip-recipes/"
+      },
+      {
+        "tag": "beef tips recipe",
+        "url": "/recipes/tags/beef-tips-recipe/"
+      },
+      {
+        "tag": "beef with gravy",
+        "url": "/recipes/tags/beef-with-gravy/"
+      },
+      {
+        "tag": "comfort food",
+        "url": "/recipes/tags/comfort-food/"
+      },
+      {
+        "tag": "easy dinner recipe",
+        "url": "/recipes/tags/easy-dinner-recipe/"
+      },
+      {
+        "tag": "hearty meals",
+        "url": "/recipes/tags/hearty-meals/"
+      },
+      {
+        "tag": "beef dinner",
+        "url": "/recipes/tags/beef-dinner/"
+      },
+      {
+        "tag": "homestyle cooking",
+        "url": "/recipes/tags/homestyle-cooking/"
+      },
+      {
+        "tag": "high protein meals",
+        "url": "/recipes/tags/high-protein-meals/"
+      },
+      {
+        "tag": "budget friendly recipes",
+        "url": "/recipes/tags/budget-friendly-recipes/"
+      }
+    ]
   }
 ];
