@@ -906,5 +906,129 @@ export const recipes: Recipe[] = [
         "url": "/recipes/tags/low-carb-recipes/"
       }
     ]
+  },
+  {
+    "title": "Best Low Carb Hamburger Meat Recipes – Easy, Healthy & High Protein Meals",
+    "slug": "best-low-carb-hamburger-meat-recipes-easy-healthy-high-protein-meals",
+    "url": "/recipes/best-low-carb-hamburger-meat-recipes-easy-healthy-high-protein-meals/",
+    "image": "/images/best-low-carb-hamburger-meat-recipes-easy-healthy-high-protein-meals.png",
+    "category": {
+      "name": "Dinner",
+      "emoji": "🍝",
+      "url": "/recipes/categories/dinner/"
+    },
+    "description": "Low Carb Hamburger Meat Recipes are a collection of simple, satisfying meals made with ground beef while keeping carbs to a minimum. These recipes are perfect for anyone following a low-carb or keto lifestyle, offering high-protein, flavorful dishes that are both filling and easy to prepare.\n\nFrom skillet meals and casseroles to one-pan dinners, hamburger meat is a versatile ingredient that works well with low-carb vegetables, cheeses, and rich seasonings. These recipes are ideal for busy weeknights, meal prep, or quick family dinners.\n\nPacked with flavor and nutrition, Low Carb Hamburger Meat Recipes provide delicious and healthy meal options that help you stay on track without sacrificing taste. 🥩",
+    "sections": {
+      "details": {
+        "prep": 10,
+        "cook": 25,
+        "servings": 4,
+        "calories": 430
+      },
+      "ingerdiants": [
+        {
+          "quantity": "1 lb ground beef",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 cup cauliflower rice",
+          "ingredient": ""
+        },
+        {
+          "quantity": "½ cup shredded cheddar cheese",
+          "ingredient": ""
+        },
+        {
+          "quantity": "½ cup heavy cream",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 small onion",
+          "ingredient": "chopped"
+        },
+        {
+          "quantity": "2 cloves garlic",
+          "ingredient": "minced"
+        },
+        {
+          "quantity": "1 tbsp olive oil",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp paprika",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp Italian seasoning",
+          "ingredient": ""
+        },
+        {
+          "quantity": "Salt & pepper to taste",
+          "ingredient": ""
+        }
+      ],
+      "overview": {
+        "header": "About Best Low Carb Hamburger Meat Recipes – Easy, Healthy & High Protein Meals",
+        "paragraph": "Low Carb Hamburger Meat Recipes are easy, hearty, and perfect for anyone looking to enjoy delicious meals while reducing carbs. This simple skillet recipe combines seasoned ground beef with creamy sauce, cheese, and low-carb vegetables to create a satisfying and flavorful dish.\n\nIt’s ideal for quick dinners, meal prep, or busy weeknights. With its rich taste and high-protein content, this recipe keeps you full and energized while supporting a low-carb lifestyle."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\nHeat olive oil in a skillet over medium heat.\n\nStep 2\nAdd chopped onion and garlic, sauté until soft.\n\nStep 3\nAdd ground beef and cook until browned. Drain excess fat if needed.\n\nStep 4\nStir in paprika, Italian seasoning, salt, and pepper.\n\nStep 5\nAdd cauliflower rice and cook for 3–5 minutes.\n\nStep 6\nPour in heavy cream and mix well.\n\nStep 7\nAdd shredded cheese and stir until melted and creamy.\n\nStep 8\nSimmer for a few minutes, then serve hot."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Use full-fat ingredients for better flavor and keto benefits.\n\n✔ Avoid overcooking cauliflower rice to keep a good texture.\n\n✔ Add spinach, zucchini, or mushrooms for extra nutrients.\n\n✔ Use fresh herbs for enhanced flavor.\n\n✔ Adjust seasoning to your taste."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Is hamburger meat good for low carb diets?\nYes, it’s high in protein and naturally low in carbs.\n\n2. Can I meal prep this recipe?\nYes, store it in the fridge for up to 3–4 days.\n\n3. Can I freeze it?\nYes, freeze in airtight containers for up to 2 months.\n\n4. What can I use instead of cauliflower rice?\nZucchini noodles or simply serve it on its own.\n\n5. How can I make it spicier?\nAdd chili flakes or hot sauce."
+      },
+      "more": {
+        "header": "More Like Best Low Carb Hamburger Meat Recipes – Easy, Healthy & High Protein Meals",
+        "recipes": []
+      }
+    },
+    "tags": [
+      {
+        "tag": "low carb hamburger meat recipes",
+        "url": "/recipes/tags/low-carb-hamburger-meat-recipes/"
+      },
+      {
+        "tag": "keto ground beef recipes",
+        "url": "/recipes/tags/keto-ground-beef-recipes/"
+      },
+      {
+        "tag": "low carb dinner ideas",
+        "url": "/recipes/tags/low-carb-dinner-ideas/"
+      },
+      {
+        "tag": "ground beef recipes",
+        "url": "/recipes/tags/ground-beef-recipes/"
+      },
+      {
+        "tag": "high protein meals",
+        "url": "/recipes/tags/high-protein-meals/"
+      },
+      {
+        "tag": "easy keto meals",
+        "url": "/recipes/tags/easy-keto-meals/"
+      },
+      {
+        "tag": "keto skillet",
+        "url": "/recipes/tags/keto-skillet/"
+      },
+      {
+        "tag": "low carb dinner",
+        "url": "/recipes/tags/low-carb-dinner/"
+      },
+      {
+        "tag": "healthy keto recipes",
+        "url": "/recipes/tags/healthy-keto-recipes/"
+      },
+      {
+        "tag": "quick keto meals",
+        "url": "/recipes/tags/quick-keto-meals/"
+      }
+    ]
   }
 ];
