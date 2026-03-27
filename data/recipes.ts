@@ -1030,5 +1030,117 @@ export const recipes: Recipe[] = [
         "url": "/recipes/tags/quick-keto-meals/"
       }
     ]
+  },
+  {
+    "title": "Best Liver and Onions Recipe – Classic, Easy & Full of Flavor",
+    "slug": "best-liver-and-onions-recipe-classic-easy-full-of-flavor",
+    "url": "/recipes/best-liver-and-onions-recipe-classic-easy-full-of-flavor/",
+    "image": "/images/best-liver-and-onions-recipe-classic-easy-full-of-flavor.png",
+    "category": {
+      "name": "Dinner",
+      "emoji": "🍝",
+      "url": "/recipes/categories/dinner/"
+    },
+    "description": "Liver and Onions Recipe is a classic, hearty dish known for its rich flavor and nutritional value. Made with tender slices of liver cooked with caramelized onions, this traditional meal delivers a savory taste with a slightly sweet balance from the onions.\n\nCooked quickly on the stovetop, the liver becomes soft and flavorful while the onions add depth and richness to the dish. It’s a simple yet satisfying recipe that has been enjoyed for generations as a comforting home-cooked meal.\n\nPacked with protein, iron, and essential nutrients, Liver and Onions is perfect for those looking for a wholesome and filling dinner. Whether served with mashed potatoes or vegetables, it’s a timeless recipe full of bold flavor. 🥩",
+    "sections": {
+      "details": {
+        "prep": 10,
+        "cook": 15,
+        "servings": 4,
+        "calories": 280
+      },
+      "ingerdiants": [
+        {
+          "quantity": "1 lb beef liver",
+          "ingredient": "sliced"
+        },
+        {
+          "quantity": "2 large onions",
+          "ingredient": "thinly sliced"
+        },
+        {
+          "quantity": "½ cup milk (for soaking)",
+          "ingredient": ""
+        },
+        {
+          "quantity": "¼ cup all-purpose flour",
+          "ingredient": ""
+        },
+        {
+          "quantity": "3 tbsp butter or olive oil",
+          "ingredient": ""
+        },
+        {
+          "quantity": "1 tsp garlic powder",
+          "ingredient": ""
+        },
+        {
+          "quantity": "Salt & pepper to taste",
+          "ingredient": ""
+        }
+      ],
+      "overview": {
+        "header": "About Best Liver and Onions Recipe – Classic, Easy & Full of Flavor",
+        "paragraph": "Liver and Onions is a traditional comfort food dish known for its rich flavor and nutritional benefits. Tender slices of liver are lightly coated and pan-fried, then paired with sweet, caramelized onions for a perfect balance of savory and sweet.\n\nThis recipe is quick, simple, and packed with protein and essential nutrients like iron. It’s a classic homestyle meal that’s both hearty and satisfying, perfect for family dinners or those looking for a nutrient-dense dish."
+      },
+      "instructions": {
+        "header": "How to Make",
+        "paragraph": "Step 1\nSoak liver slices in milk for 20–30 minutes to reduce bitterness.\n\nStep 2\nRemove liver from milk and pat dry. Season with salt, pepper, and garlic powder, then lightly coat with flour.\n\nStep 3\nHeat butter or oil in a skillet over medium heat.\n\nStep 4\nAdd onions and cook until soft and caramelized. Remove and set aside.\n\nStep 5\nIn the same pan, cook liver slices for 2–3 minutes per side until browned but still tender inside.\n\nStep 6\nReturn onions to the pan and combine with liver.\n\nStep 7\nCook for another minute, then serve hot."
+      },
+      "tips": {
+        "header": "Pro Tips",
+        "paragraph": "✔ Don’t overcook the liver—it should stay tender, not tough.\n\n✔ Soaking in milk helps reduce strong flavor and improves texture.\n\n✔ Slice onions thinly for better caramelization.\n\n✔ Use butter for richer flavor.\n\n✔ Serve immediately for best taste."
+      },
+      "faq": {
+        "header": "FAQ",
+        "paragraph": "1. Why soak liver in milk?\nIt helps reduce bitterness and improves flavor.\n\n2. How do I know when liver is cooked?\nIt should be browned outside and slightly pink inside.\n\n3. Can I use chicken liver?\nYes, but cooking time may vary.\n\n4. Can I make it without flour?\nYes, skip the coating for a lighter version.\n\n5. What sides go well with it?\nMashed potatoes, rice, or steamed vegetables."
+      },
+      "more": {
+        "header": "More Like Best Liver and Onions Recipe – Classic, Easy & Full of Flavor",
+        "recipes": []
+      }
+    },
+    "tags": [
+      {
+        "tag": "liver and onions recipe",
+        "url": "/recipes/tags/liver-and-onions-recipe/"
+      },
+      {
+        "tag": "beef liver recipe",
+        "url": "/recipes/tags/beef-liver-recipe/"
+      },
+      {
+        "tag": "classic comfort food",
+        "url": "/recipes/tags/classic-comfort-food/"
+      },
+      {
+        "tag": "easy dinner recipe",
+        "url": "/recipes/tags/easy-dinner-recipe/"
+      },
+      {
+        "tag": "high protein meals",
+        "url": "/recipes/tags/high-protein-meals/"
+      },
+      {
+        "tag": "traditional recipes",
+        "url": "/recipes/tags/traditional-recipes/"
+      },
+      {
+        "tag": "nutrient rich food",
+        "url": "/recipes/tags/nutrient-rich-food/"
+      },
+      {
+        "tag": "homestyle cooking",
+        "url": "/recipes/tags/homestyle-cooking/"
+      },
+      {
+        "tag": "quick dinner",
+        "url": "/recipes/tags/quick-dinner/"
+      },
+      {
+        "tag": "healthy recipes",
+        "url": "/recipes/tags/healthy-recipes/"
+      }
+    ]
   }
 ];
